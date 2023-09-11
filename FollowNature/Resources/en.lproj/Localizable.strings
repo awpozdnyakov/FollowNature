@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  FollowNature
+
+  Created by Andrey Pozdnyakov on 12.09.2023.
+  
+*/
+
+// MARK: TabBar items
+"home" = "Главная";
+"notepad" = "Блокнот";
+"profile" = "Профиль";
+
+// MARK: Home
+
+// MARK: Notepad
+
+// MARK: Profile

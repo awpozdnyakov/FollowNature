@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  FollowNature
 //
-//  Created by Наталья Рябкова on 12.09.2023.
+//  Created by Andrey Pozdnyakov on 12.09.2023.
 //
 
 import UIKit
