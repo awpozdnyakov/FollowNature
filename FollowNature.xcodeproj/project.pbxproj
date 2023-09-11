@@ -16,6 +16,15 @@
 		E12047242AAFB7F500FE0F2B /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12047232AAFB7F500FE0F2B /* XCAssets+Generated.swift */; };
 		E12047262AAFB80600FE0F2B /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12047252AAFB80600FE0F2B /* Strings+Generated.swift */; };
 		E12047282AAFB98A00FE0F2B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E120472A2AAFB98A00FE0F2B /* Localizable.strings */; };
+		E120472E2AAFBDAF00FE0F2B /* PreviewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E120472D2AAFBDAF00FE0F2B /* PreviewMock.swift */; };
+		E12047302AAFBDBE00FE0F2B /* EmptyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E120472F2AAFBDBE00FE0F2B /* EmptyRouter.swift */; };
+		E12047322AAFBDD200FE0F2B /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12047312AAFBDD200FE0F2B /* MainTabBarCoordinator.swift */; };
+		E12047342AAFBDE400FE0F2B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12047332AAFBDE400FE0F2B /* ProfileCoordinator.swift */; };
+		E12047362AAFBDF800FE0F2B /* NotepadCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12047352AAFBDF800FE0F2B /* NotepadCoordinator.swift */; };
+		E12047382AAFBE0C00FE0F2B /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12047372AAFBE0C00FE0F2B /* HomeCoordinator.swift */; };
+		E120473C2AAFBF0C00FE0F2B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E120473B2AAFBF0C00FE0F2B /* CombineMoya */; };
+		E120473E2AAFBF0C00FE0F2B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E120473D2AAFBF0C00FE0F2B /* Moya */; };
+		E12047412AAFBF6400FE0F2B /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = E12047402AAFBF6400FE0F2B /* XCoordinator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,12 @@
 		E12047232AAFB7F500FE0F2B /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		E12047252AAFB80600FE0F2B /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		E12047292AAFB98A00FE0F2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E120472D2AAFBDAF00FE0F2B /* PreviewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMock.swift; sourceTree = "<group>"; };
+		E120472F2AAFBDBE00FE0F2B /* EmptyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRouter.swift; sourceTree = "<group>"; };
+		E12047312AAFBDD200FE0F2B /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		E12047332AAFBDE400FE0F2B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		E12047352AAFBDF800FE0F2B /* NotepadCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadCoordinator.swift; sourceTree = "<group>"; };
+		E12047372AAFBE0C00FE0F2B /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E120473E2AAFBF0C00FE0F2B /* Moya in Frameworks */,
+				E12047412AAFBF6400FE0F2B /* XCoordinator in Frameworks */,
+				E120473C2AAFBF0C00FE0F2B /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,11 +80,11 @@
 		E12046EF2AAF985A00FE0F2B /* FollowNature */ = {
 			isa = PBXGroup;
 			children = (
-				E12046F02AAF985A00FE0F2B /* AppDelegate.swift */,
-				E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */,
+				E120472B2AAFBC9300FE0F2B /* AppDelegate */,
+				E120472C2AAFBCF300FE0F2B /* Coordinators */,
+				E12047272AAFB81300FE0F2B /* Resources */,
 				E12046F42AAF985A00FE0F2B /* ViewController.swift */,
 				E12046F62AAF985A00FE0F2B /* Main.storyboard */,
-				E12047272AAFB81300FE0F2B /* Resources */,
 				E12046FB2AAF985B00FE0F2B /* LaunchScreen.storyboard */,
 				E12046FE2AAF985B00FE0F2B /* Info.plist */,
 			);
@@ -85,11 +103,41 @@
 		E12047272AAFB81300FE0F2B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E12047202AAFB7B500FE0F2B /* Generated */,
 				E12046F92AAF985B00FE0F2B /* Assets.xcassets */,
 				E120472A2AAFB98A00FE0F2B /* Localizable.strings */,
-				E12047202AAFB7B500FE0F2B /* Generated */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E120472B2AAFBC9300FE0F2B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E12046F02AAF985A00FE0F2B /* AppDelegate.swift */,
+				E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E120472C2AAFBCF300FE0F2B /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				E12047392AAFBE1400FE0F2B /* Routers */,
+				E12047312AAFBDD200FE0F2B /* MainTabBarCoordinator.swift */,
+				E12047372AAFBE0C00FE0F2B /* HomeCoordinator.swift */,
+				E12047352AAFBDF800FE0F2B /* NotepadCoordinator.swift */,
+				E12047332AAFBDE400FE0F2B /* ProfileCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		E12047392AAFBE1400FE0F2B /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				E120472D2AAFBDAF00FE0F2B /* PreviewMock.swift */,
+				E120472F2AAFBDBE00FE0F2B /* EmptyRouter.swift */,
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +156,11 @@
 			dependencies = (
 			);
 			name = FollowNature;
+			packageProductDependencies = (
+				E120473B2AAFBF0C00FE0F2B /* CombineMoya */,
+				E120473D2AAFBF0C00FE0F2B /* Moya */,
+				E12047402AAFBF6400FE0F2B /* XCoordinator */,
+			);
 			productName = FollowNature;
 			productReference = E12046ED2AAF985A00FE0F2B /* FollowNature.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +189,10 @@
 				Base,
 			);
 			mainGroup = E12046E42AAF985A00FE0F2B;
+			packageReferences = (
+				E120473A2AAFBF0C00FE0F2B /* XCRemoteSwiftPackageReference "Moya" */,
+				E120473F2AAFBF6400FE0F2B /* XCRemoteSwiftPackageReference "XCoordinator" */,
+			);
 			productRefGroup = E12046EE2AAF985A00FE0F2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,11 +221,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E120472E2AAFBDAF00FE0F2B /* PreviewMock.swift in Sources */,
 				E12047262AAFB80600FE0F2B /* Strings+Generated.swift in Sources */,
+				E12047362AAFBDF800FE0F2B /* NotepadCoordinator.swift in Sources */,
+				E12047302AAFBDBE00FE0F2B /* EmptyRouter.swift in Sources */,
+				E12047322AAFBDD200FE0F2B /* MainTabBarCoordinator.swift in Sources */,
 				E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */,
 				E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */,
 				E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */,
+				E12047342AAFBDE400FE0F2B /* ProfileCoordinator.swift in Sources */,
 				E12047242AAFB7F500FE0F2B /* XCAssets+Generated.swift in Sources */,
+				E12047382AAFBE0C00FE0F2B /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +461,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E120473A2AAFBF0C00FE0F2B /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		E120473F2AAFBF6400FE0F2B /* XCRemoteSwiftPackageReference "XCoordinator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuickBirdEng/XCoordinator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E120473B2AAFBF0C00FE0F2B /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E120473A2AAFBF0C00FE0F2B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		E120473D2AAFBF0C00FE0F2B /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E120473A2AAFBF0C00FE0F2B /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		E12047402AAFBF6400FE0F2B /* XCoordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E120473F2AAFBF6400FE0F2B /* XCRemoteSwiftPackageReference "XCoordinator" */;
+			productName = XCoordinator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E12046E52AAF985A00FE0F2B /* Project object */;
 }
