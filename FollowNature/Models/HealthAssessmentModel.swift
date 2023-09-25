@@ -1,5 +1,5 @@
 //
-//  HealthAssessment.swift
+//  HealthAssessmentModel.swift
 //  FollowNature
 //
 //  Created by Andrey Pozdnyakov on 24.09.2023.

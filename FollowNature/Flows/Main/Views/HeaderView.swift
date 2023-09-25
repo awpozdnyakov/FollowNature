@@ -22,9 +22,12 @@ struct HeaderView: View {
                 Text("Твой уровень")
                 Text(level)
                 Spacer()
-                Image(uiImage: Asset.Images.follow.image)
-                    .resizable()
-                    .frame(width: 45, height: 45)
+                Button {
+                } label: {
+                    Image(uiImage: Asset.Images.follow.image)
+                        .resizable()
+                        .frame(width: 45, height: 45)
+                }
             }
             Text("Сделай фото чтобы повысить его!")
             

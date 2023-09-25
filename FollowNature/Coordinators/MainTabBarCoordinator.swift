@@ -18,8 +18,8 @@ class MainTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
     private let profileRouter: StrongRouter<ProfileRoute>
     
     convenience init() {
-        UITabBar.appearance().tintColor = .green
-        UITabBar.appearance().unselectedItemTintColor = .gray
+        UITabBar.appearance().tintColor = UIColor(Asset.Colors.green.swiftUIColor)
+        UITabBar.appearance().unselectedItemTintColor = UIColor(Asset.Colors.gray.swiftUIColor)
         
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
