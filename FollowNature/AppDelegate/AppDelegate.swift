@@ -11,6 +11,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        initAppearance()
+
         return true
     }
 
@@ -26,3 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate {
+    
+    private func initAppearance() {
+        
+        //TODO: Not working
+        UITabBar.appearance().itemWidth = 100
+        UITabBar.appearance().tintColor = UIColor(Asset.Colors.green.swiftUIColor)
+        UITabBar.appearance().unselectedItemTintColor = .green
+    }
+}

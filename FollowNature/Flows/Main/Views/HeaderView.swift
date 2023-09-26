@@ -20,7 +20,10 @@ struct HeaderView: View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
                 Text("Твой уровень")
+                    .font(.system(size: 22))
                 Text(level)
+                    .font(.system(size: 22, weight: .heavy))
+                    .foregroundColor(Asset.Colors.green.swiftUIColor)
                 Spacer()
                 Button {
                 } label: {
@@ -30,7 +33,7 @@ struct HeaderView: View {
                 }
             }
             Text("Сделай фото чтобы повысить его!")
-            
+                .font(.system(size: 22))
         }
         .padding(.horizontal, 15)
     }

@@ -25,6 +25,7 @@
 		E120473C2AAFBF0C00FE0F2B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E120473B2AAFBF0C00FE0F2B /* CombineMoya */; };
 		E120473E2AAFBF0C00FE0F2B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E120473D2AAFBF0C00FE0F2B /* Moya */; };
 		E12047412AAFBF6400FE0F2B /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = E12047402AAFBF6400FE0F2B /* XCoordinator */; };
+		E1A586932AC1E534002C295F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A586922AC1E534002C295F /* Constants.swift */; };
 		E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */; };
 		E1BA5AA32ABCC96B00C444DD /* RecognitionRequestCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */; };
 		E1BA5AA62ABCC9BB00C444DD /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA52ABCC9BB00C444DD /* HomeScreenView.swift */; };
@@ -56,6 +57,7 @@
 		E12047332AAFBDE400FE0F2B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		E12047352AAFBDF800FE0F2B /* NotepadCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadCoordinator.swift; sourceTree = "<group>"; };
 		E12047372AAFBE0C00FE0F2B /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		E1A586922AC1E534002C295F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionService.swift; sourceTree = "<group>"; };
 		E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionRequestCollection.swift; sourceTree = "<group>"; };
 		E1BA5AA52ABCC9BB00C444DD /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				E1BA5AA42ABCC99D00C444DD /* Flows */,
 				E1BA5AAD2ABCCD3D00C444DD /* Components */,
 				E120472C2AAFBCF300FE0F2B /* Coordinators */,
+				E1A586912AC1E516002C295F /* Core */,
 				E1EE7DD92ABE1B590087A2D0 /* Models */,
 				E12047272AAFB81300FE0F2B /* Resources */,
 				E1BA5A9E2ABCC7BC00C444DD /* Services */,
@@ -164,6 +167,14 @@
 				E120472F2AAFBDBE00FE0F2B /* EmptyRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		E1A586912AC1E516002C295F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E1A586922AC1E534002C295F /* Constants.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		E1BA5A9E2ABCC7BC00C444DD /* Services */ = {
@@ -316,6 +327,7 @@
 				E1EE7DE02ABF934F0087A2D0 /* HealthAssessmentModel.swift in Sources */,
 				E12047262AAFB80600FE0F2B /* Strings+Generated.swift in Sources */,
 				E12047362AAFBDF800FE0F2B /* NotepadCoordinator.swift in Sources */,
+				E1A586932AC1E534002C295F /* Constants.swift in Sources */,
 				E12047302AAFBDBE00FE0F2B /* EmptyRouter.swift in Sources */,
 				E12047322AAFBDD200FE0F2B /* MainTabBarCoordinator.swift in Sources */,
 				E1BA5AA82ABCC9F800C444DD /* HomeViewModel.swift in Sources */,
@@ -415,6 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_KEY_UIUserInterfaceStyle[sdk=*]" = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -486,6 +499,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4DUTCP7Z6J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -516,6 +530,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4DUTCP7Z6J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

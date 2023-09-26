@@ -12,7 +12,7 @@ struct HealthAssessmentModel: Codable {
 }
 
 struct HealthResult: Codable {
-    let is_healthy: Probability
+//    let is_healthy: Probability
     let disease: HealthSuggestions
 }
 

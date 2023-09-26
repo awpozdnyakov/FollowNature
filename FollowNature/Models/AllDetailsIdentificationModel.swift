@@ -7,40 +7,36 @@
 
 import Foundation
 
-struct AllDetailsIdentificationModel: Codable {
-    let access_token: String
-    let input: ImageAnswer
-    let result: ResultAnswer
+struct Base64IdentificationModel: Codable {
+    let result: Base64Classification
 }
 
-struct ImageAnswer: Codable {
-    let images: [URL?]
+struct Base64Classification: Codable {
+    let classification: Base64Suggestions
 }
 
-struct ResultAnswer: Codable {
-    let result: IsPlant
+struct Base64Suggestions: Codable {
+    let suggestions: [Base64Suggestion]
 }
-
-struct IsPlant: Codable {
-    let is_plant: Probability
-    let classification: Classification
-}
-
-struct Classification: Codable {
-    let suggestions: [Suggestion]
-}
-struct Suggestion: Codable, Identifiable {
+struct Base64Suggestion: Codable, Identifiable {
     let id: String
     let name: String
     let probability: Double
     let similar_images: [SimilarImage]
-    let details: [ClassificationDetails]
+    let details: Detais
 }
 
-struct ClassificationDetails: Codable {
-    let taxonomy: Taxonomy
+struct SimilarImage: Codable {
     let url: URL?
+    let similarity: Double
+}
+
+struct Detais: Codable {
+    let common_names: [String]
+    let taxonomy: Taxonomy
+    let url: URL? //Wikipedia
     let description: [DescriptionValue]
+    let synonyms: [String]
 }
 
 struct DescriptionValue: Codable {
@@ -48,7 +44,7 @@ struct DescriptionValue: Codable {
 }
 
 struct Taxonomy: Codable {
-    let taxonomyClass: String
+//    let taxonomyClass: String
     let genus: String
     let order: String
     let family: String
@@ -56,27 +52,20 @@ struct Taxonomy: Codable {
     let kingdom: String
 }
 
-struct CommonNames: Codable {
-    
-}
 
-struct SimilarImage: Codable, Identifiable {
-    let id: String
-    let url: URL?
-    let similarity: Double
-}
 
-struct Probability: Codable {
-    let probability: Double
-}
 
-struct Plants: Codable {
-    let plants: [Plant]
-}
-
-struct Plant: Codable {
-    let images: [URL?]
-    let name: String
-    let family: String
-    let description: String
-}
+//struct Probability: Codable {
+//    let probability: Double
+//}
+//
+//struct Plants: Codable {
+//    let plants: [Plant]
+//}
+//
+//struct Plant: Codable {
+//    let images: [URL?]
+//    let name: String
+//    let family: String
+//    let description: String
+//}
