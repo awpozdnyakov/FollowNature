@@ -25,6 +25,7 @@
 		E120473C2AAFBF0C00FE0F2B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E120473B2AAFBF0C00FE0F2B /* CombineMoya */; };
 		E120473E2AAFBF0C00FE0F2B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E120473D2AAFBF0C00FE0F2B /* Moya */; };
 		E12047412AAFBF6400FE0F2B /* XCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = E12047402AAFBF6400FE0F2B /* XCoordinator */; };
+		E19D69352AC4DC8000C9D797 /* JustifyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D69342AC4DC8000C9D797 /* JustifyCardView.swift */; };
 		E1A586932AC1E534002C295F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A586922AC1E534002C295F /* Constants.swift */; };
 		E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */; };
 		E1BA5AA32ABCC96B00C444DD /* RecognitionRequestCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */; };
@@ -57,6 +58,7 @@
 		E12047332AAFBDE400FE0F2B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		E12047352AAFBDF800FE0F2B /* NotepadCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadCoordinator.swift; sourceTree = "<group>"; };
 		E12047372AAFBE0C00FE0F2B /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		E19D69342AC4DC8000C9D797 /* JustifyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyCardView.swift; sourceTree = "<group>"; };
 		E1A586922AC1E534002C295F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionService.swift; sourceTree = "<group>"; };
 		E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionRequestCollection.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */,
+				E19D69342AC4DC8000C9D797 /* JustifyCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				E1BA5AA32ABCC96B00C444DD /* RecognitionRequestCollection.swift in Sources */,
 				E12047342AAFBDE400FE0F2B /* ProfileCoordinator.swift in Sources */,
 				E12047242AAFB7F500FE0F2B /* XCAssets+Generated.swift in Sources */,
+				E19D69352AC4DC8000C9D797 /* JustifyCardView.swift in Sources */,
 				E1EE7DDD2ABF86EC0087A2D0 /* AllDetailsIdentificationModel.swift in Sources */,
 				E1BA5AAF2ABCCDA300C444DD /* PlantCardView.swift in Sources */,
 				E12047382AAFBE0C00FE0F2B /* HomeCoordinator.swift in Sources */,

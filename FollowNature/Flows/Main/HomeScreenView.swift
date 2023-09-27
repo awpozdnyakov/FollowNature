@@ -49,7 +49,12 @@ struct HomeScreenView: View {
                 TabView {
                     LazyVStack(spacing: 15) {
                         ForEach(viewModel.plants) { cardData in
-                            PlantCardView(name: cardData.name, image: cardData.details.image.value, description: cardData.details.description.value, select: {}, details: {}, selected: $selected)
+                            PlantCardView(name: cardData.name,
+                                          image: cardData.details.image.value,
+                                          description: cardData.details.description.value,
+                                          select: {},
+                                          details: {},
+                                          selected: $selected)
                         }
 
                     }
