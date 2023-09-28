@@ -59,7 +59,7 @@ struct PlantCardView: View {
                     Button {
                         self.details()
                     } label: {
-                        Text("Detail")
+                        Text(L10n.details)
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundColor(Asset.Colors.textPrimary.swiftUIColor)
                             .frame(width: 70, height: 30)

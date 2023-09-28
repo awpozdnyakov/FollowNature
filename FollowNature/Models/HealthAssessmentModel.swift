@@ -12,7 +12,6 @@ struct HealthAssessmentModel: Codable {
 }
 
 struct HealthResult: Codable {
-//    let is_healthy: Probability
     let disease: HealthSuggestions
 }
 
@@ -24,7 +23,6 @@ struct HealthSuggestion: Codable {
     let id: String
     let name: String
     let probability: Double
-    let similar_images: [SimilarImage]
     let detail: HealthDetail
 }
 

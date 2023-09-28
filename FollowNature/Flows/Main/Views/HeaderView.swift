@@ -19,7 +19,7 @@ struct HeaderView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text("Твой уровень")
+                Text(L10n.yourLevel)
                     .font(.system(size: 22))
                 Text(level)
                     .font(.system(size: 22, weight: .heavy))
@@ -32,7 +32,7 @@ struct HeaderView: View {
                         .frame(width: 45, height: 45)
                 }
             }
-            Text("Сделай фото чтобы повысить его!")
+            Text(L10n.makeAPhoto)
                 .font(.system(size: 22))
         }
         .padding(.horizontal, 15)

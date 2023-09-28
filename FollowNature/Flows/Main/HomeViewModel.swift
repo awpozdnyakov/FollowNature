@@ -11,7 +11,6 @@ import Combine
 import XCoordinator
 import Moya
 
-
 final class HomeViewModel: ObservableObject {
     
     @Published var plants: [FormdataSuggestion] = [] {
@@ -19,17 +18,18 @@ final class HomeViewModel: ObservableObject {
             storage.save(plants: plants)
         }
     }
+    @Published var selectedMedia: UIImage?
+    @Published var showMediaPicker: Bool = false
+    @Published var selected: Bool = false
 
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
     private let storage = PlantsStorage()
     private var cancellable: AnyCancellable?
-    
-    
+        
     init(
         router: UnownedRouter<HomeRoute>,
         service: RecognitionService = RecognitionServiceImpl()
-       
     ) {
         self.router = router
         self.service = service
@@ -59,6 +59,4 @@ final class HomeViewModel: ObservableObject {
     
     // MARK: - Routing
     
-    
-    
-}
+    }

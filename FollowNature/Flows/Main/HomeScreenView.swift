@@ -10,12 +10,8 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @ObservedObject private var viewModel: HomeViewModel
-    @State private var selectedMedia: UIImage?
-    @State private var profileImage: Image?
-    @State private var showMediaPicker: Bool = false
-    @State private var selected: Bool = false
+    
     let imageManager = ImageConverter()
-
 
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -26,7 +22,7 @@ struct HomeScreenView: View {
             HeaderView(level: "Pro")
                 .padding(.bottom, 10)
             Button {
-                showMediaPicker = true
+                viewModel.showMediaPicker = true
             } label: {
                 Image(asset: Asset.Images.follow)
             }
@@ -54,9 +50,8 @@ struct HomeScreenView: View {
                                           description: cardData.details.description.value,
                                           select: {},
                                           details: {},
-                                          selected: $selected)
+                                          selected: $viewModel.selected)
                         }
-
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
@@ -65,15 +60,15 @@ struct HomeScreenView: View {
         }
         .padding(.vertical, 40)
         .ignoresSafeArea()
-        .sheet(isPresented: $showMediaPicker, onDismiss: loadPhoto, content: {
-            MediaPicker(photo: $selectedMedia)
+        .sheet(isPresented: $viewModel.showMediaPicker, onDismiss: loadPhoto, content: {
+            MediaPicker(photo: $viewModel.selectedMedia)
         })
     }
 }
 
 extension HomeScreenView {
     func loadPhoto() {
-        guard let selectedMedia = selectedMedia else {return}
+        guard let selectedMedia = viewModel.selectedMedia else {return}
 //        guard let photoBase64 = imageManager.imageToBase64(selectedMedia) else {return}
 //        viewModel.pushBase64Photo(photo: PhotoBase64Model(images: [photoBase64], latitude: 49.207, longitude: 16.608, similar_images: true))
                 viewModel.pushFormdataPhoto(photo: selectedMedia)
@@ -85,23 +80,6 @@ struct MainScreenView_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreenView(viewModel: HomeViewModel(router: .previewMock()))
     }
-}
-
-
-
-// TODO: Strange Objects for sending photo
-
-class ImageConverter {
-    
-    func base64ToImage(_ base64String: String) -> UIImage? {
-        guard let imageData = Data(base64Encoded: base64String) else { return nil }
-        return UIImage(data: imageData)
-    }
-    
-    func imageToBase64(_ image: UIImage) -> String? {
-        return image.jpegData(compressionQuality: 1)?.base64EncodedString()
-    }
-    
 }
 
 class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
