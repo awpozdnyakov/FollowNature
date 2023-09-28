@@ -14,11 +14,15 @@ import Moya
 
 final class HomeViewModel: ObservableObject {
     
-    @Published var plants: [FormdataSuggestion] = []
+    @Published var plants: [FormdataSuggestion] = [] {
+        didSet {
+            storage.save(plants: plants)
+        }
+    }
 
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
- 
+    private let storage = PlantsStorage()
     private var cancellable: AnyCancellable?
     
     
@@ -29,6 +33,7 @@ final class HomeViewModel: ObservableObject {
     ) {
         self.router = router
         self.service = service
+        self.plants = storage.load()
     }
     
     // MARK: - Loading

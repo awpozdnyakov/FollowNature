@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */; };
 		E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F02AAF985A00FE0F2B /* AppDelegate.swift */; };
 		E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */; };
 		E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F42AAF985A00FE0F2B /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsStorage.swift; sourceTree = "<group>"; };
 		E12046ED2AAF985A00FE0F2B /* FollowNature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowNature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12046F02AAF985A00FE0F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				E1EE7DE12ABF981F0087A2D0 /* ObtainUsageInfo.swift */,
 				E1EE7DDA2ABE1B9E0087A2D0 /* LevelModel.swift */,
 				E1EE7DE72AC0CCF00087A2D0 /* PlantModel.swift */,
+				4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */,
 				E1EE7DDC2ABF86EC0087A2D0 /* AllDetailsIdentificationModel.swift */,
 				E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */,
 			);
@@ -347,6 +350,7 @@
 				E1EE7DDD2ABF86EC0087A2D0 /* AllDetailsIdentificationModel.swift in Sources */,
 				E1BA5AAF2ABCCDA300C444DD /* PlantCardView.swift in Sources */,
 				E12047382AAFBE0C00FE0F2B /* HomeCoordinator.swift in Sources */,
+				4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */,
 				E1BA5AAC2ABCCD2100C444DD /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
