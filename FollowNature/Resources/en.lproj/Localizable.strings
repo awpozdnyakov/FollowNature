@@ -11,7 +11,12 @@
 "notepad" = "Блокнот";
 "profile" = "Профиль";
 
+// MARK: Buttions
+"details" = "Details";
+
 // MARK: Home
+"yourLevel" = "Твой уровень";
+"makeAPhoto" = "Сделай фото чтобы повысить его!";
 
 // MARK: Notepad
 
