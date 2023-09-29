@@ -23,6 +23,7 @@ struct HomeScreenView: View {
                 .padding(.bottom, 10)
             Button {
                 viewModel.showMediaPicker = true
+                viewModel.showJustifyScreen()
             } label: {
                 Image(asset: Asset.Images.follow)
             }
