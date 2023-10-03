@@ -12,7 +12,7 @@ struct HomeScreenView: View {
     @ObservedObject private var viewModel: HomeViewModel
     
     let imageManager = ImageConverter()
-
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
@@ -22,8 +22,7 @@ struct HomeScreenView: View {
             HeaderView(level: "Pro")
                 .padding(.bottom, 10)
             Button {
-                viewModel.showMediaPicker = true
-                viewModel.showJustifyScreen()
+                    viewModel.showMediaPicker = true
             } label: {
                 Image(asset: Asset.Images.follow)
             }
@@ -50,7 +49,9 @@ struct HomeScreenView: View {
                                           image: cardData.details.image.value,
                                           description: cardData.details.description.value,
                                           select: {},
-                                          details: {},
+                                          details: {
+                                viewModel.showDetailScreen(plant: cardData)
+                            },
                                           selected: $viewModel.selected)
                         }
                     }
@@ -70,9 +71,9 @@ struct HomeScreenView: View {
 extension HomeScreenView {
     func loadPhoto() {
         guard let selectedMedia = viewModel.selectedMedia else {return}
-//        guard let photoBase64 = imageManager.imageToBase64(selectedMedia) else {return}
-//        viewModel.pushBase64Photo(photo: PhotoBase64Model(images: [photoBase64], latitude: 49.207, longitude: 16.608, similar_images: true))
-                viewModel.pushFormdataPhoto(photo: selectedMedia)
+        //        guard let photoBase64 = imageManager.imageToBase64(selectedMedia) else {return}
+        //        viewModel.pushBase64Photo(photo: PhotoBase64Model(images: [photoBase64], latitude: 49.207, longitude: 16.608, similar_images: true))
+        viewModel.pushFormdataPhoto(photo: selectedMedia)
         print("Photo sent")
     }
 }
@@ -84,46 +85,44 @@ struct MainScreenView_Previews: PreviewProvider {
 }
 
 class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     @Binding var presentationMode: PresentationMode
     @Binding var photo: UIImage?
-
+    
     init(presentationMode: Binding<PresentationMode>, photo: Binding<UIImage?>) {
         _presentationMode = presentationMode
         _photo = photo
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         photo = uiImage
         presentationMode.dismiss()
-
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         presentationMode.dismiss()
     }
-
 }
 
 struct MediaPicker: UIViewControllerRepresentable {
-
+    
     @Binding var photo: UIImage?
     @Environment(\.presentationMode)
-
+    
     var presentationMode
-
+    
     func makeCoordinator() -> Coordinator {
         return Coordinator(presentationMode: presentationMode, photo: $photo)
     }
-
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<MediaPicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         return picker
     }
-
+    
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<MediaPicker>) {
     }
-
+    
 }

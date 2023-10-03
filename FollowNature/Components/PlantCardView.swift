@@ -54,20 +54,20 @@ struct PlantCardView: View {
                     .font(.system(size: 15, weight: .medium))
                     .foregroundColor(Asset.Colors.textSecondary.swiftUIColor)
                 Spacer()
-                HStack {
-                    Spacer()
-                    Button {
-                        self.details()
-                    } label: {
+                Button {
+                    self.details()
+                } label: {
+                    HStack {
+                        Spacer()
                         Text(L10n.details)
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundColor(Asset.Colors.textPrimary.swiftUIColor)
-                            .frame(width: 70, height: 30)
-                            .background(
-                                RoundedRectangle(cornerRadius: 7)
-                                    .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2)
-                            )
-                    }
+                        
+                        Spacer()
+                    }.frame(height: 30)
+                        .background(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2))
                 }
             }
             AsyncImage(url: image) { image in

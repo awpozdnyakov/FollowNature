@@ -44,10 +44,11 @@ final class HomeViewModel: ObservableObject {
                 print(completion)
             }, receiveValue: { result in
                 print(result)
-                self.justifyPlants.append(contentsOf: result.result.classification.suggestions)
+                self.justifyPlants = result.result.classification.suggestions
                 if let positive = self.justifyPlants.first {
                     self.plants.append(positive)
                 }
+                self.showJustifyScreen(plants: self.justifyPlants)
             })
     }
     
@@ -62,7 +63,11 @@ final class HomeViewModel: ObservableObject {
     
     
     // MARK: - Routing
-    func showJustifyScreen() {
-        router.trigger(.jistify)
+    func showJustifyScreen(plants: [FormdataSuggestion]) {
+        router.trigger(.jistify(plants))
+    }
+    
+    func showDetailScreen(plant: FormdataSuggestion) {
+        router.trigger(.details(plant))
     }
 }
