@@ -28,11 +28,22 @@ struct FormdataSuggestion: Codable, Identifiable {
 
 struct FormdataDetails: Codable {
     let common_names: [String]?
+    let taxonomy: Taxonomy
     let url: URL? //Wikipedia
     let description: DescriptionValue
     let synonyms: [String]?
     let image: FormdataImage
     let rank: String?
+    
+}
+
+struct Taxonomy: Codable {
+    let type: String
+    let genus: String
+    let order: String
+    let family: String
+    let phylum: String
+    let kingdom: String
 }
 
 struct DescriptionValue: Codable {
