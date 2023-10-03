@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072ED8AF2AC95D84007CDE80 /* PlantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */; };
+		072ED8B12AC95D90007CDE80 /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8B02AC95D90007CDE80 /* PlantDetailView.swift */; };
 		4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */; };
 		E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F02AAF985A00FE0F2B /* AppDelegate.swift */; };
 		E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewModel.swift; sourceTree = "<group>"; };
+		072ED8B02AC95D90007CDE80 /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
 		4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsStorage.swift; sourceTree = "<group>"; };
 		E12046ED2AAF985A00FE0F2B /* FollowNature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowNature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12046F02AAF985A00FE0F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072ED8AD2AC95C8B007CDE80 /* Detailed */ = {
+			isa = PBXGroup;
+			children = (
+				072ED8B02AC95D90007CDE80 /* PlantDetailView.swift */,
+				072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */,
+			);
+			path = Detailed;
+			sourceTree = "<group>";
+		};
 		E12046E42AAF985A00FE0F2B = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 		E1BA5AA42ABCC99D00C444DD /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				072ED8AD2AC95C8B007CDE80 /* Detailed */,
 				E1BA5AA92ABCCCF600C444DD /* Main */,
 			);
 			path = Flows;
@@ -353,7 +367,9 @@
 				E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */,
 				E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */,
 				E1BA5AA62ABCC9BB00C444DD /* HomeScreenView.swift in Sources */,
+				072ED8AF2AC95D84007CDE80 /* PlantDetailViewModel.swift in Sources */,
 				E1BA5AA32ABCC96B00C444DD /* RecognitionRequestCollection.swift in Sources */,
+				072ED8B12AC95D90007CDE80 /* PlantDetailView.swift in Sources */,
 				E12047342AAFBDE400FE0F2B /* ProfileCoordinator.swift in Sources */,
 				E19D69442AC5F18B00C9D797 /* ImageConverter.swift in Sources */,
 				E12047242AAFB7F500FE0F2B /* XCAssets+Generated.swift in Sources */,
