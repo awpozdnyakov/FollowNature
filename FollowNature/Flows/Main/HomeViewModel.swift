@@ -44,7 +44,7 @@ final class HomeViewModel: ObservableObject {
                 print(completion)
             }, receiveValue: { result in
                 print(result)
-                self.justifyPlants = result.result.classification.suggestions
+                self.justifyPlants.append(contentsOf: result.result.classification.suggestions)
                 if let positive = self.justifyPlants.first {
                     self.plants.append(positive)
                 }
