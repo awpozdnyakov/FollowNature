@@ -16,5 +16,5 @@ class Constants {
     
     let testImage = "http://plant.id/media/imgs/516ece8ef23a4fdab8fcceea8b6e457e.jpg"
     
-    let apiKey: String = "uUaeFbUMHDhs3iL0o5WgU0aE8NsnakTMPlOzSNWD6aFKRd2AxA"
+    let apiKey: String = "U1QVzbxukXm3cOnbp2MLEHK9RYIluiThZmryQVbUvznZNhxDwU"
 }

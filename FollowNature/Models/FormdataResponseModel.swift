@@ -28,7 +28,7 @@ struct FormdataSuggestion: Codable, Identifiable {
 
 struct FormdataDetails: Codable {
     let common_names: [String]?
-    let taxonomy: Taxonomy
+    let taxonomy: Taxonomy?
     let url: URL? //Wikipedia
     let description: DescriptionValue
     let synonyms: [String]?
@@ -38,7 +38,6 @@ struct FormdataDetails: Codable {
 }
 
 struct Taxonomy: Codable {
-    let type: String
     let genus: String
     let order: String
     let family: String

@@ -18,15 +18,16 @@ final class HomeViewModel: ObservableObject {
             storage.save(plants: plants)
         }
     }
+    @Published var justifyPlants: [FormdataSuggestion] = []
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false
     @Published var selected: Bool = false
-
+    
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
     private let storage = PlantsStorage()
     private var cancellable: AnyCancellable?
-        
+    
     init(
         router: UnownedRouter<HomeRoute>,
         service: RecognitionService = RecognitionServiceImpl()
@@ -43,7 +44,11 @@ final class HomeViewModel: ObservableObject {
                 print(completion)
             }, receiveValue: { result in
                 print(result)
-                self.plants.append(contentsOf: result.result.classification.suggestions)
+                self.justifyPlants = result.result.classification.suggestions
+                if let positive = self.justifyPlants.first {
+                    self.plants.append(positive)
+                }
+                self.showJustifyScreen(plants: self.justifyPlants)
             })
     }
     
@@ -58,5 +63,11 @@ final class HomeViewModel: ObservableObject {
     
     
     // MARK: - Routing
-    
+    func showJustifyScreen(plants: [FormdataSuggestion]) {
+        router.trigger(.jistify(plants))
     }
+    
+    func showDetailScreen(plant: FormdataSuggestion) {
+        router.trigger(.details(plant))
+    }
+}
