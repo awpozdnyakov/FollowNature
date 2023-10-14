@@ -6,18 +6,29 @@
   
 */
 
-// MARK: TabBar items
+// MARK: - TabBar items
 "home" = "Главная";
 "notepad" = "Блокнот";
 "profile" = "Профиль";
 
-// MARK: Buttions
+// MARK: - Buttions
 "details" = "Узнать больше";
 
-// MARK: Home
+// MARK: - Home
 "yourLevel" = "Твой уровень";
 "makeAPhoto" = "Сделай фото чтобы повысить его!";
 
-// MARK: Notepad
+// MARK: - Notepad
 
-// MARK: Profile
+// MARK: - Profile
+"requests" = "Запросов выполнено";
+"mySelected" = "Мое “Выбраное”";
+"connection" = "Связь с разработчиками";
+"andrew" = "Андрей";
+"shamil" = "Шамиль";
+"tilek" = "Тилек";
+"rehina" = "Регина";
+"urlAndrew" = "https://github.com/awpozdnyakov";
+"urlShamil" = "https://github.com/ShAglarov";
+"urlTilek" = "https://github.com/ti1ek";
+"urlRehina" = "https://github.com/riitterz";

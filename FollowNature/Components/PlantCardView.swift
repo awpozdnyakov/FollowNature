@@ -67,7 +67,7 @@ struct PlantCardView: View {
                     }.frame(height: 30)
                         .background(
                             RoundedRectangle(cornerRadius: 7)
-                                .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2))
+                                .stroke(Asset.Colors.greenLight.swiftUIColor, lineWidth: 2))
                 }
             }
             AsyncImage(url: image) { image in

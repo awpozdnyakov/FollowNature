@@ -7,24 +7,29 @@
 
 import XCoordinator
 import UIKit
+import SwiftUI
 
-enum ProfileRoute: Route {
-    case profile
+enum SettingsRoute: Route {
+    case settings
 }
 
-class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
+class SettingsCoordinator: NavigationCoordinator<SettingsRoute> {
     
     init() {
-        super.init(initialRoute: .profile)
+        super.init(initialRoute: .settings)
     }
     
-    override func prepareTransition(for route: ProfileRoute) -> NavigationTransition {
+    override func prepareTransition(for route: SettingsRoute) -> NavigationTransition {
         switch route {
             
-        case .profile:
-            let viewController = UIViewController()
-            viewController.view.backgroundColor = .white
-            return .push(viewController)
+        case .settings:
+            return .push(buildSettingsScreen())
         }
+    }
+    
+    private func buildSettingsScreen() -> UIViewController {
+        let viewModel = SettingsViewModel(router: unownedRouter)
+        let rootView = SettingsScreenView(viewModel: viewModel)
+        return UIHostingController(rootView: rootView)
     }
 }
