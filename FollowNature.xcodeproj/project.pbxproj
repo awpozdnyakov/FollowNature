@@ -37,6 +37,7 @@
 		E19D69442AC5F18B00C9D797 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D69432AC5F18B00C9D797 /* ImageConverter.swift */; };
 		E19D69462AC74DD600C9D797 /* JustifyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D69452AC74DD600C9D797 /* JustifyScreenView.swift */; };
 		E1A586932AC1E534002C295F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A586922AC1E534002C295F /* Constants.swift */; };
+		E1B89E802ADB01EB0099BC3B /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B89E7F2ADB01EB0099BC3B /* PhotoPicker.swift */; };
 		E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */; };
 		E1BA5AA32ABCC96B00C444DD /* RecognitionRequestCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */; };
 		E1BA5AA62ABCC9BB00C444DD /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA52ABCC9BB00C444DD /* HomeScreenView.swift */; };
@@ -79,6 +80,7 @@
 		E19D69432AC5F18B00C9D797 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		E19D69452AC74DD600C9D797 /* JustifyScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyScreenView.swift; sourceTree = "<group>"; };
 		E1A586922AC1E534002C295F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1B89E7F2ADB01EB0099BC3B /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionService.swift; sourceTree = "<group>"; };
 		E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionRequestCollection.swift; sourceTree = "<group>"; };
 		E1BA5AA52ABCC9BB00C444DD /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BA5AAB2ABCCD2100C444DD /* HeaderView.swift */,
+				E1B89E7F2ADB01EB0099BC3B /* PhotoPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				E12047322AAFBDD200FE0F2B /* MainTabBarCoordinator.swift in Sources */,
 				E1BA5AA82ABCC9F800C444DD /* HomeViewModel.swift in Sources */,
 				E15A1FAD2ACC51980045F9DC /* JustifyViewModel.swift in Sources */,
+				E1B89E802ADB01EB0099BC3B /* PhotoPicker.swift in Sources */,
 				E19D69462AC74DD600C9D797 /* JustifyScreenView.swift in Sources */,
 				E15A1FB12ACC53280045F9DC /* TaxonomyRow.swift in Sources */,
 				E1EE7DDB2ABE1B9E0087A2D0 /* LevelModel.swift in Sources */,
@@ -500,7 +504,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"INFOPLIST_KEY_UIUserInterfaceStyle[sdk=*]" = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -554,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -578,6 +582,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,6 +614,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

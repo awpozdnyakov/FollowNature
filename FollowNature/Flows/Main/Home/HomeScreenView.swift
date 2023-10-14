@@ -22,11 +22,15 @@ struct HomeScreenView: View {
             HeaderView(level: "Pro")
                 .padding(.bottom, 10)
             Button {
-                    viewModel.showMediaPicker = true
+//                    viewModel.showMediaPicker = true
+                viewModel.showImagePicker = true
             } label: {
                 Image(asset: Asset.Images.follow)
             }
             .padding(.vertical, 10)
+            .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
+                PhotoPicker(photo: $viewModel.selectedMedia)
+            })
             Button {
             } label: {
                 Text("|")
@@ -62,9 +66,9 @@ struct HomeScreenView: View {
         }
         .padding(.vertical, 40)
         .ignoresSafeArea()
-        .sheet(isPresented: $viewModel.showMediaPicker, onDismiss: loadPhoto, content: {
-            MediaPicker(photo: $viewModel.selectedMedia)
-        })
+//        .sheet(isPresented: $viewModel.showMediaPicker, onDismiss: loadPhoto, content: {
+//            MediaPicker(photo: $viewModel.selectedMedia)
+//        })
     }
 }
 
@@ -84,45 +88,50 @@ struct MainScreenView_Previews: PreviewProvider {
     }
 }
 
-class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    @Binding var presentationMode: PresentationMode
-    @Binding var photo: UIImage?
-    
-    init(presentationMode: Binding<PresentationMode>, photo: Binding<UIImage?>) {
-        _presentationMode = presentationMode
-        _photo = photo
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        photo = uiImage
-        presentationMode.dismiss()
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        presentationMode.dismiss()
-    }
-}
+//class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+//    
+//    @Binding var presentationMode: PresentationMode
+//    @Binding var photo: UIImage?
+//    
+//    init(
+//        presentationMode: Binding<PresentationMode>,
+//        photo: Binding<UIImage?>
+//    ) {
+//        _presentationMode = presentationMode
+//        _photo = photo
+//    }
+//    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+//        photo = uiImage
+//        presentationMode.dismiss()
+//    }
+//    
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        presentationMode.dismiss()
+//    }
+//}
 
-struct MediaPicker: UIViewControllerRepresentable {
-    
-    @Binding var photo: UIImage?
-    @Environment(\.presentationMode)
-    
-    var presentationMode
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(presentationMode: presentationMode, photo: $photo)
-    }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<MediaPicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<MediaPicker>) {
-    }
-    
-}
+//struct MediaPicker: UIViewControllerRepresentable {
+//    
+//    @Binding var photo: UIImage?
+//    @Environment(\.presentationMode)
+//    
+//    var presentationMode
+//    
+//    func makeCoordinator() -> Coordinator {
+//        return Coordinator(presentationMode: presentationMode, photo: $photo)
+//    }
+//    
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<MediaPicker>) -> UIImagePickerController {
+//        let picker = UIImagePickerController()
+////        picker.sourceType = .camera
+//        picker.delegate = context.coordinator
+//        return picker
+//    }
+//    
+//    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<MediaPicker>) {
+//    }
+//    
+//}
+

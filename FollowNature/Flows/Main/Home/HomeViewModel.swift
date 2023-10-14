@@ -21,6 +21,7 @@ final class HomeViewModel: ObservableObject {
     @Published var justifyPlants: [FormdataSuggestion] = []
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false
+    @Published var showImagePicker: Bool = false
     @Published var selected: Bool = false
     
     private let router: UnownedRouter<HomeRoute>
