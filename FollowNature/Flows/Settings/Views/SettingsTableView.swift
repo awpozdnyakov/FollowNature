@@ -48,8 +48,9 @@ struct SettingsTableView: View {
                 Spacer()
             }
         }
-        .frame(width: 400, height: 380)
-        .padding(.bottom, 220)
+        .frame(maxWidth: .infinity)
+        .frame(height: 380)
+        .padding(.horizontal, 15)
     }
 }
 

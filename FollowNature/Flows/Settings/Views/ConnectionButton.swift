@@ -30,10 +30,11 @@ struct ConnectionButton: View {
                     Text(L10n.connection)
                         .foregroundColor(.black)
                         .font(.system(size: 20, weight: .medium))
+                    Spacer()
                 }
                 .padding(.leading, 20)
                 .padding(.vertical, 10)
-                .frame(width: 400, alignment: .leading)
+                .frame(maxWidth: .infinity)
             }
         }
     }
