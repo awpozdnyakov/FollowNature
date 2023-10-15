@@ -43,7 +43,7 @@ struct PlantDetailScreenView: View {
                     .foregroundColor(.black)
                 Spacer()
                 Button {
-                    viewModel.selected.toggle()
+                    viewModel.select()
                 } label: {
                     Image(systemName: "ladybug")
                         .resizable()
@@ -81,7 +81,7 @@ struct PlantDetailScreenView: View {
             }
             GeometryReader { geometry in
                 Button(action: {
-                    viewModel.selected.toggle()
+                    viewModel.unSelect()
                 }) {
                     Text("Убрать из списка “Выбраное”")
                         .font(.system(size: 18, weight: .bold))
@@ -108,7 +108,7 @@ struct PlantDetailView_Previews: PreviewProvider {
         
         let mockPlant = FormdataSuggestion(id: "1", name: "Flower flower", probability: 0.95, details: FormdataDetails(common_names: nil, taxonomy: Taxonomy(genus: "Leucojum", order: "Asparagales", family: "Amaryllidaceae", phylum: "Tracheophyta", kingdom: "Liliopsida"), url: nil, description: DescriptionValue(value: "Leucojum vernum, называемый весенней снежинкой, - вид цветковых растений семейства Амариллисовые. Он произрастает в Центральной и Южной Европе от Бельгии до Украины. Он считается натурализованным в северо-западной Европе, включая Великобританию и некоторые районы Скандинавии, а также в американских штатах Джорджия и Флорида. Этот весеннецветущий луковичный травянистый многолетник выращивается как декоративное растение на солнечном месте. Растение размножается в благоприятных условиях, образуя кустики. Каждое растение несет по одному белому цветку с зеленоватыми отметинами на кончике листочка околоцветника, на стебле высотой около 10-20 см (3,9–7,9 дюйма), иногда больше.Латинский специфический эпитет vernum означает относящийся к весне. Его близкий родственник, Leucojum aestivum, цветет летом."), synonyms: nil, image: FormdataImage(value: imageUrl), rank: nil))
         
-        let viewModel = PlantDetailViewModel(plant: mockPlant, router: .previewMock())
+        let viewModel = PlantDetailViewModel(plant: mockPlant, selected: true, router: .previewMock())
         
         return NavigationView {
             PlantDetailScreenView(viewModel: viewModel)

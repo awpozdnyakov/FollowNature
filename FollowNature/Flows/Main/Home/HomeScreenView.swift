@@ -10,9 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @ObservedObject private var viewModel: HomeViewModel
-    
-    let imageManager = ImageConverter()
-    
+        
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
@@ -48,15 +46,16 @@ struct HomeScreenView: View {
                 TabView {
                     LazyVStack(spacing: 15) {
                         ForEach(viewModel.plants) { cardData in
-                            PlantCardView(name: cardData.name,
-                                          image: cardData.details.image.value,
-                                          description: cardData.details.description.value,
-                                          select: {},
-                                          details: {
-                                viewModel.showDetailScreen(plant: cardData)
-                            },
-                                          selected: $viewModel.selected)
-                        }
+                            PlantCardView(
+                                plant: cardData,
+                                selected: .constant(true),
+                                select: {},
+                                details: {
+                                    viewModel.showDetailScreen(
+                                        plant: cardData,
+                                        selected: viewModel.plants.contains(where: { $0.id == cardData.id })
+                                    )}
+                            )}
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))

@@ -22,7 +22,6 @@ final class HomeViewModel: ObservableObject {
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false
     @Published var showImagePicker: Bool = false
-    @Published var selected: Bool = false
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
@@ -47,9 +46,11 @@ final class HomeViewModel: ObservableObject {
                 print(result)
                 self.justifyPlants = result.result.classification.suggestions
                 if let positive = self.justifyPlants.first {
-                    self.plants.append(positive)
+                    if !self.plants.contains(where: { $0.id == positive.id }) {
+                        self.plants.append(positive)
+                    }
+                    self.showJustifyScreen(justifyPlants: self.justifyPlants)
                 }
-                self.showJustifyScreen(plants: self.justifyPlants)
             })
     }
     
@@ -64,11 +65,11 @@ final class HomeViewModel: ObservableObject {
     
     
     // MARK: - Routing
-    func showJustifyScreen(plants: [FormdataSuggestion]) {
-        router.trigger(.jistify(plants))
+    func showJustifyScreen(justifyPlants: [FormdataSuggestion]) {
+        router.trigger(.jistify(justifyPlants))
     }
     
-    func showDetailScreen(plant: FormdataSuggestion) {
-        router.trigger(.details(plant))
+    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
+        router.trigger(.details(plant, selected))
     }
 }
