@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import XCoordinator
 
 struct JustifyScreenView: View {
     
@@ -19,20 +20,29 @@ struct JustifyScreenView: View {
         ScrollView {
             TabView {
                 LazyVStack(spacing: 15) {
-                    ForEach(viewModel.plants) { cardData in
-                        JustifyCardView(name: cardData.name, image: cardData.details.image.value, description: cardData.details.description.value, select: {}, details: {viewModel.showDetailScreen(plant: cardData)}, selected: $viewModel.selected, progress: cardData.probability)
+                    ForEach(viewModel.justifyPlants) { cardData in
+                        JustifyCardView(
+                            name: cardData.name,
+                            image: cardData.details.image.value,
+                            description: cardData.details.description.value,
+                            select: {},
+                            details: {viewModel.showDetailScreen(
+                                plant: cardData,
+                                selected: viewModel.plants.contains(where: { $0.id == cardData.id })
+                            )},
+                            progress: cardData.probability)
                     }
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(height: CGFloat(viewModel.plants.count * 225 + 30))
+            .frame(height: CGFloat(viewModel.justifyPlants.count * 225 + 30))
         }
         .navigationTitle("Точность совпадения:")
     }
 }
 
-//struct JustifyScreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        JustifyScreenView(viewModel: JustifyViewModel(plants: <#[FormdataSuggestion]#>, router: .previewMock()))
-//    }
-//}
+struct JustifyScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        JustifyScreenView(viewModel: JustifyViewModel(justifyPlants: [FormdataSuggestion(id: "", name: "Tree", probability: 98, details: FormdataDetails(common_names: nil, taxonomy: nil, url: nil, description: DescriptionValue(value: "Very interesting"), synonyms: nil, image: FormdataImage(value: nil), rank: nil))], router: .previewMock()))
+    }
+}
