@@ -16,12 +16,15 @@ final class HomeViewModel: ObservableObject {
     @Published var plants: [FormdataSuggestion] = [] {
         didSet {
             storage.save(plants: plants)
+            updateLevel()
         }
     }
     @Published var justifyPlants: [FormdataSuggestion] = []
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false
     @Published var showImagePicker: Bool = false
+    @Published var selected: Bool = false
+    @Published var userLevel: UserLevel = .specialist
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
@@ -35,7 +38,20 @@ final class HomeViewModel: ObservableObject {
         self.router = router
         self.service = service
         self.plants = storage.load()
+        self.userLevel = UserPreferences.shared.userLevel
+        updateLevel()
     }
+    
+    func increaseSearchCount() {
+         let currentSearches = UserPreferences.shared.numberOfSearches
+         UserPreferences.shared.numberOfSearches = currentSearches + 1
+         updateLevel()
+     }
+
+     func updateLevel() {
+         userLevel = UserLevel.determineLevel(from: UserPreferences.shared.numberOfSearches)
+         UserPreferences.shared.userLevel = userLevel
+     }
     
     // MARK: - Loading
     func pushFormdataPhoto(photo: UIImage) {
@@ -65,6 +81,7 @@ final class HomeViewModel: ObservableObject {
                 }
             }, receiveValue: { result in
                 print(result)
+                self.increaseSearchCount()
                 if let suggestions = result.result?.classification.suggestions {
                     self.justifyPlants = suggestions
                     if let positive = self.justifyPlants.first {

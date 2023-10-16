@@ -8,6 +8,8 @@
 	<string></string>
 	<key>CFBundleIdentifier</key>
 	<string></string>
+	<key>GoogleCloudAPIKey</key>
+	<string>AIzaSyDTk6C8MKaTeVYXIcpEsnL9i9I1qgEMLEI</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

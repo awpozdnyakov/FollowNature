@@ -17,7 +17,7 @@ struct HomeScreenView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HeaderView(level: "Pro")
+            HeaderView(level: viewModel.userLevel)
                 .padding(.bottom, 10)
             Button {
                 viewModel.showImagePicker = true
@@ -63,6 +63,7 @@ struct HomeScreenView: View {
             }
         }
         .padding(.vertical, 40)
+        .padding(.top, 20)
         .ignoresSafeArea()
     }
 }
