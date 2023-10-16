@@ -10,6 +10,8 @@
 		072ED8AF2AC95D84007CDE80 /* PlantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */; };
 		072ED8B12AC95D90007CDE80 /* PlantDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */; };
 		4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */; };
+		4BDDDA4E2AD48317008092EA /* NotepadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDDA4D2AD48317008092EA /* NotepadScreenView.swift */; };
+		4BDDDA502AD4832B008092EA /* NotepadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDDA4F2AD4832B008092EA /* NotepadViewModel.swift */; };
 		E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F02AAF985A00FE0F2B /* AppDelegate.swift */; };
 		E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */; };
 		E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F42AAF985A00FE0F2B /* ViewController.swift */; };
@@ -53,6 +55,8 @@
 		072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewModel.swift; sourceTree = "<group>"; };
 		072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailScreenView.swift; sourceTree = "<group>"; };
 		4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsStorage.swift; sourceTree = "<group>"; };
+		4BDDDA4D2AD48317008092EA /* NotepadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadScreenView.swift; sourceTree = "<group>"; };
+		4BDDDA4F2AD4832B008092EA /* NotepadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadViewModel.swift; sourceTree = "<group>"; };
 		E12046ED2AAF985A00FE0F2B /* FollowNature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowNature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12046F02AAF985A00FE0F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 				E15A1FB42ACC5CBD0045F9DC /* Views */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		4BDDDA4C2AD4828F008092EA /* Notepad */ = {
+			isa = PBXGroup;
+			children = (
+				4BDDDA4D2AD48317008092EA /* NotepadScreenView.swift */,
+				4BDDDA4F2AD4832B008092EA /* NotepadViewModel.swift */,
+			);
+			path = Notepad;
 			sourceTree = "<group>";
 		};
 		E12046E42AAF985A00FE0F2B = {
@@ -254,6 +267,7 @@
 		E1BA5AA42ABCC99D00C444DD /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				4BDDDA4C2AD4828F008092EA /* Notepad */,
 				E1BA5AA92ABCCCF600C444DD /* Main */,
 			);
 			path = Flows;
@@ -335,7 +349,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					E12046EC2AAF985A00FE0F2B = {
 						CreatedOnToolsVersion = 14.3;
@@ -399,6 +413,7 @@
 				E15A1FB12ACC53280045F9DC /* TaxonomyRow.swift in Sources */,
 				E1EE7DDB2ABE1B9E0087A2D0 /* LevelModel.swift in Sources */,
 				E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */,
+				4BDDDA4E2AD48317008092EA /* NotepadScreenView.swift in Sources */,
 				E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */,
 				E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */,
 				E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */,
@@ -416,6 +431,7 @@
 				E19D693C2AC5E6F000C9D797 /* PhotoModel.swift in Sources */,
 				E1BA5AAC2ABCCD2100C444DD /* HeaderView.swift in Sources */,
 				E19D693E2AC5E7C800C9D797 /* FormdataResponseModel.swift in Sources */,
+				4BDDDA502AD4832B008092EA /* NotepadViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +501,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -546,6 +563,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

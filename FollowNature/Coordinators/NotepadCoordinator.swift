@@ -7,6 +7,7 @@
 
 import XCoordinator
 import UIKit
+import SwiftUI
 
 enum NotepadRoute: Route {
     case notepad
@@ -22,9 +23,13 @@ class NotepadCoordinator: NavigationCoordinator<NotepadRoute> {
         switch route {
             
         case .notepad:
-            let viewController = UIViewController()
-            viewController.view.backgroundColor = .white
-            return .push(viewController)
+            return .push(buildNotepadScreen())
         }
+    }
+    
+    private func buildNotepadScreen() -> UIViewController {
+        let viewModel = NotepadViewModel(router: unownedRouter)
+        let rootView = NotepadScreenView(viewModel: viewModel)
+        return UIHostingController(rootView: rootView)
     }
 }

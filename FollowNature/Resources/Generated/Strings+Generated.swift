@@ -10,8 +10,15 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Все
+  internal static let allSelected = L10n.tr("Localizable", "allSelected", fallback: "Все")
+  /// Нажими на жучка
+  /// Создай свой список “Выбранное
+  internal static let clickOntheBugOrCreateYourSelectedList = L10n.tr("Localizable", "clickOntheBugOrCreateYourSelectedList", fallback: "Нажими на жучка\nСоздай свой список “Выбранное")
   /// Узнать больше
   internal static let details = L10n.tr("Localizable", "details", fallback: "Узнать больше")
+  /// Введите название растения
+  internal static let enterPlantName = L10n.tr("Localizable", "enterPlantName", fallback: "Введите название растения")
   /// Localizable.strings
   ///   FollowNature
   /// 
@@ -23,6 +30,8 @@ internal enum L10n {
   internal static let notepad = L10n.tr("Localizable", "notepad", fallback: "Блокнот")
   /// Профиль
   internal static let profile = L10n.tr("Localizable", "profile", fallback: "Профиль")
+  /// Выбранное
+  internal static let selected = L10n.tr("Localizable", "selected", fallback: "Выбранное")
   /// Твой уровень
   internal static let yourLevel = L10n.tr("Localizable", "yourLevel", fallback: "Твой уровень")
 }

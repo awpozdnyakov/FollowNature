@@ -20,4 +20,9 @@
 
 // MARK: Notepad
 
+"selected" = "Выбранное";
+"allSelected" = "Все";
+"enterPlantName" = "Введите название растения";
+"clickOntheBugOrCreateYourSelectedList" = "Нажими на жучка\nСоздай свой список “Выбранное";
+
 // MARK: Profile
