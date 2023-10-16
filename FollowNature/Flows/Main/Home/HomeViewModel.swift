@@ -41,15 +41,38 @@ final class HomeViewModel: ObservableObject {
     func pushFormdataPhoto(photo: UIImage) {
         cancellable = service.postFormdataPhoto(photo: photo)
             .sink(receiveCompletion: { completion in
-                print(completion)
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Запрос завершился с ошибкой: \(error)")
+                    let defaultSuggestion = FormdataSuggestion(
+                        id: "",
+                        name: "Не определено",
+                        probability: 0,
+                        details: FormdataDetails(
+                            common_names: nil,
+                            taxonomy: nil,
+                            url: nil,
+                            description: DescriptionValue(value: "Попробуйте выполнить поиск повторно"),
+                            synonyms: nil,
+                            image: FormdataImage(value: nil),
+                            rank: nil
+                        )
+                    )
+                    self.justifyPlants = [defaultSuggestion]
+                    self.showJustifyScreen(justifyPlants: self.justifyPlants)
+                }
             }, receiveValue: { result in
                 print(result)
-                self.justifyPlants = result.result.classification.suggestions
-                if let positive = self.justifyPlants.first {
-                    if !self.plants.contains(where: { $0.id == positive.id }) {
-                        self.plants.append(positive)
+                if let suggestions = result.result?.classification.suggestions {
+                    self.justifyPlants = suggestions
+                    if let positive = self.justifyPlants.first {
+                        if !self.plants.contains(where: { $0.id == positive.id }) {
+                            self.plants.append(positive)
+                        }
+                        self.showJustifyScreen(justifyPlants: self.justifyPlants)
                     }
-                    self.showJustifyScreen(justifyPlants: self.justifyPlants)
                 }
             })
     }

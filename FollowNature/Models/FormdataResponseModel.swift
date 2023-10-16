@@ -8,7 +8,7 @@
 import Foundation
 
 struct FormdataResponseModel: Codable {
-    let result: FormdataClassification
+    let result: FormdataClassification?
 }
 
 struct FormdataClassification: Codable {
