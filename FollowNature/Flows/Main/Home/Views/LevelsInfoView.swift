@@ -35,10 +35,10 @@ struct LevelsInfoModalView: View {
             VStack(spacing: 0) {
 // MARK: - First Row
                 HStack {
-                    Text("Твой уровень")
+                    Text(L10n.yourLevel)
                         .font(.system(size: 24, weight: .bold))
                     Spacer()
-                    Image(uiImage: Asset.Images.level.image)
+                    Image(asset: Asset.Images.level)
                         .resizable()
                         .frame(width: 80, height: 80)
                         .padding(.bottom, 10)
@@ -62,10 +62,10 @@ struct LevelsInfoModalView: View {
                     HStack(alignment: .bottom, spacing: 0) {
                         Spacer()
                         VStack {
-                            Image(uiImage: Asset.Images.level.image)
+                            Image(asset: Asset.Images.level)
                                 .resizable()
                                 .frame(width: 90, height: 90)
-                            Text("0 поисков")
+                            Text(L10n.zeroSearch)
                                 .font(.system(size: 13, weight: .medium))
                                 .foregroundColor(Asset.Colors.gray.swiftUIColor)
                             
@@ -83,10 +83,10 @@ struct LevelsInfoModalView: View {
                         
                         VStack(spacing: 0) {
                             Spacer()
-                            Image(uiImage: Asset.Images.level.image)
+                            Image(asset: Asset.Images.level)
                                 .resizable()
                                 .frame(width: 110, height: 110)
-                            Text("10 поисков")
+                            Text(L10n.tenSearch)
                                 .font(.system(size: 13, weight: .medium))
                                 .foregroundColor(Asset.Colors.gray.swiftUIColor)
                             
@@ -107,10 +107,10 @@ struct LevelsInfoModalView: View {
                     HStack(alignment: .bottom, spacing: 0) {
                         Spacer()
                         VStack {
-                            Image(uiImage: Asset.Images.level.image)
+                            Image(asset: Asset.Images.level)
                                 .resizable()
                                 .frame(width: 150, height: 150)
-                            Text("50 поисков")
+                            Text(L10n.fiftySearch)
                                 .font(.system(size: 13, weight: .medium))
                                 .foregroundColor(Asset.Colors.gray.swiftUIColor)
                             
@@ -126,10 +126,10 @@ struct LevelsInfoModalView: View {
                             .padding(.trailing, 30)
                         
                         VStack {
-                            Image(uiImage: Asset.Images.level.image)
+                            Image(asset: Asset.Images.level)
                                 .resizable()
                                 .frame(width: 130, height: 130)
-                            Text("30 поисков")
+                            Text(L10n.thirtySearch)
                                 .font(.system(size: 13, weight: .medium))
                                 .foregroundColor(Asset.Colors.gray.swiftUIColor)
                             
