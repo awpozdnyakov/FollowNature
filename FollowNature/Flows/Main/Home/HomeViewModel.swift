@@ -16,12 +16,15 @@ final class HomeViewModel: ObservableObject {
     @Published var plants: [FormdataSuggestion] = [] {
         didSet {
             storage.save(plants: plants)
+            updateLevel()
         }
     }
     @Published var justifyPlants: [FormdataSuggestion] = []
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false
+    @Published var showImagePicker: Bool = false
     @Published var selected: Bool = false
+    @Published var userLevel: UserLevel = .specialist
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
@@ -35,20 +38,59 @@ final class HomeViewModel: ObservableObject {
         self.router = router
         self.service = service
         self.plants = storage.load()
+        self.userLevel = UserPreferences.shared.userLevel
+        updateLevel()
     }
+    
+    func increaseSearchCount() {
+         let currentSearches = UserPreferences.shared.numberOfSearches
+         UserPreferences.shared.numberOfSearches = currentSearches + 1
+         updateLevel()
+     }
+
+     func updateLevel() {
+         userLevel = UserLevel.determineLevel(from: UserPreferences.shared.numberOfSearches)
+         UserPreferences.shared.userLevel = userLevel
+     }
     
     // MARK: - Loading
     func pushFormdataPhoto(photo: UIImage) {
         cancellable = service.postFormdataPhoto(photo: photo)
             .sink(receiveCompletion: { completion in
-                print(completion)
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Запрос завершился с ошибкой: \(error)")
+                    let defaultSuggestion = FormdataSuggestion(
+                        id: "",
+                        name: "Не определено",
+                        probability: 0,
+                        details: FormdataDetails(
+                            common_names: nil,
+                            taxonomy: nil,
+                            url: nil,
+                            description: DescriptionValue(value: "Попробуйте выполнить поиск повторно"),
+                            synonyms: nil,
+                            image: FormdataImage(value: nil),
+                            rank: nil
+                        )
+                    )
+                    self.justifyPlants = [defaultSuggestion]
+                    self.showJustifyScreen(justifyPlants: self.justifyPlants)
+                }
             }, receiveValue: { result in
                 print(result)
-                self.justifyPlants = result.result.classification.suggestions
-                if let positive = self.justifyPlants.first {
-                    self.plants.append(positive)
+                self.increaseSearchCount()
+                if let suggestions = result.result?.classification.suggestions {
+                    self.justifyPlants = suggestions
+                    if let positive = self.justifyPlants.first {
+                        if !self.plants.contains(where: { $0.id == positive.id }) {
+                            self.plants.append(positive)
+                        }
+                        self.showJustifyScreen(justifyPlants: self.justifyPlants)
+                    }
                 }
-                self.showJustifyScreen(plants: self.justifyPlants)
             })
     }
     
@@ -63,11 +105,11 @@ final class HomeViewModel: ObservableObject {
     
     
     // MARK: - Routing
-    func showJustifyScreen(plants: [FormdataSuggestion]) {
-        router.trigger(.jistify(plants))
+    func showJustifyScreen(justifyPlants: [FormdataSuggestion]) {
+        router.trigger(.jistify(justifyPlants))
     }
     
-    func showDetailScreen(plant: FormdataSuggestion) {
-        router.trigger(.details(plant))
+    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
+        router.trigger(.details(plant, selected))
     }
 }

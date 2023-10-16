@@ -16,22 +16,20 @@ struct SettingsScreenView: View {
     }
     
     var body: some View {
-        NavigationView {
+        VStack {
             ZStack {
                 VStack(spacing: 24) {
                     SettingsHeaderView()
                     SettingsTableView(viewModel: viewModel)
                 }
-                
                 if viewModel.openDevelopersTable {
                     DevelopersTableView()
                         .onTapGesture {
-                            withAnimation {
-                                viewModel.openDevelopersTable = false
-                            }
+                            viewModel.openDevelopersTable = false
                         }
                 }
             }
+            Spacer()
         }
     }
 }

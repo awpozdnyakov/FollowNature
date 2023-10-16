@@ -20,10 +20,12 @@ struct SelectedButton: View {
                     Text(L10n.mySelected)
                         .foregroundColor(.black)
                         .font(.system(size: 20, weight: .medium))
+                    Spacer()
                 }
                 .padding(.vertical, 10)
                 .padding(.leading, 20)
-                .frame(width: 400, alignment: .leading)
+                .frame(maxWidth: .infinity)
+                .frame(alignment: .leading)
             }
         }
     }

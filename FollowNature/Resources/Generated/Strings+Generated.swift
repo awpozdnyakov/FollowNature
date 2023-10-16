@@ -47,6 +47,30 @@ internal enum L10n {
   internal static let urlTilek = L10n.tr("Localizable", "urlTilek", fallback: "https://github.com/ti1ek")
   /// Твой уровень
   internal static let yourLevel = L10n.tr("Localizable", "yourLevel", fallback: "Твой уровень")
+    /// 0 поисков
+    internal static let zeroSearch = L10n.tr("Localizable", "zeroSearch", fallback: "0 поисков")
+    /// 10 поисков
+    internal static let tenSearch = L10n.tr("Localizable", "tenSearch", fallback: "10 поисков")
+    /// 30 поисков
+    internal static let thirtySearch = L10n.tr("Localizable", "thirtySearch", fallback: "30 поисков")
+    /// 50 поисков
+    internal static let fiftySearch = L10n.tr("Localizable", "fiftySearch", fallback: "50 поисков")
+    /// Показать меньше
+    internal static let showMore = L10n.tr("Localizable", "showMore", fallback: "Показать больше")
+    /// Показать меньше
+    internal static let showTranslate = L10n.tr("Localizable", "showTranslate", fallback: "Показать перевод")
+    /// Убрать из списка “Выбраное”
+    internal static let deleteFromFavorite = L10n.tr("Localizable", "deleteFromFavorite", fallback: "Убрать из списка “Выбраное”")
+    /// Род
+    internal static let taxonomy = L10n.tr("Localizable", "taxonomy", fallback: "Род:")
+    /// Порядок
+    internal static let order = L10n.tr("Localizable", "order", fallback: "Порядок:")
+    /// Семейство
+    internal static let family = L10n.tr("Localizable", "family", fallback: "Семейство:")
+    /// Тип
+    internal static let phylum = L10n.tr("Localizable", "phylum", fallback: "Тип:")
+    /// Царство
+    internal static let kingdom = L10n.tr("Localizable", "kingdom", fallback: "Царство:")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

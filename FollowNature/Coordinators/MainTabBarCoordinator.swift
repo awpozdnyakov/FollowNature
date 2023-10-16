@@ -50,5 +50,6 @@ class MainTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
         self.notepadRouter = notepadRouter
         self.settingsRouter = settingsRouter
         super.init(tabs: [homeRouter, notepadRouter, settingsRouter],select: homeRouter)
+        rootViewController.view.backgroundColor = .white
     }
 }
