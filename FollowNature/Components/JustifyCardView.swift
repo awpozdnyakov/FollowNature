@@ -15,16 +15,13 @@ struct JustifyCardView: View {
     private let select: () -> Void
     private let details: () -> Void
     private let progress: CGFloat
-    
-    @Binding var selected: Bool
-    
+        
     init(
         name: String,
         image: URL?,
         description: String,
         select: @escaping () -> Void,
         details: @escaping () -> Void,
-        selected: Binding<Bool>,
         progress: CGFloat
     ) {
         self.name = name
@@ -32,7 +29,6 @@ struct JustifyCardView: View {
         self.description = description
         self.select = select
         self.details = details
-        self._selected = selected
         self.progress = progress
     }
     
@@ -114,6 +110,6 @@ struct JustifyCardView: View {
 
 struct JustifyCardView_Previews: PreviewProvider {
     static var previews: some View {
-        JustifyCardView(name: "Leucojum vernum", image: nil, description: "Leucojum vernum, called the spring snowflake, is a species of flowering plant in the family Amaryllidaceae.", select: {}, details: {}, selected: .constant(true), progress: 0.78)
+        JustifyCardView(name: "Leucojum vernum", image: nil, description: "Leucojum vernum, called the spring snowflake, is a species of flowering plant in the family Amaryllidaceae.", select: {}, details: {}, progress: 0.78)
     }
 }

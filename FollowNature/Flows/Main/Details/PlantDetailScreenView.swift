@@ -44,7 +44,7 @@ struct PlantDetailScreenView: View {
                     .foregroundColor(.black)
                 Spacer()
                 Button {
-                    viewModel.selected.toggle()
+                    viewModel.select()
                 } label: {
                     Image(asset: Asset.Images.ladybug)
                         .resizable()
@@ -107,7 +107,7 @@ struct PlantDetailScreenView: View {
             
             GeometryReader { geometry in
                 Button(action: {
-                    viewModel.selected.toggle()
+                    viewModel.unSelect()
                 }) {
                     Text(L10n.deleteFromFavorite)
                         .font(.system(size: 18, weight: .bold))
@@ -135,7 +135,7 @@ struct PlantDetailView_Previews: PreviewProvider {
         
         let mockPlant = FormdataSuggestion(id: "1", name: "Flower flower", probability: 0.95, details: FormdataDetails(common_names: nil, taxonomy: Taxonomy(genus: "Leucojum", order: "Asparagales", family: "Amaryllidaceae", phylum: "Tracheophyta", kingdom: "Liliopsida"), url: nil, description: DescriptionValue(value: "In a world where socks mysteriously vanish from the dryer and Tupperware lids disappear into the abyss, one man named Bob made it his life’s mission to find the other half of his favorite pair of socks. Bob journeyed to the mysterious land of the Laundry Realm, passing by the towering Mountains of Mismatched Socks, and wading through the treacherous Sea of Lint. Along the way, he battled with the ferocious Static Cling Monster and outwitted the cunning Sock Gnomes. Just when he was about to give up, he discovered a hidden portal in his sock drawer that led to an alternate dimension—the dimension of the lost Tupperware lids! Who would have thought socks and lids were partying together?"), synonyms: nil, image: FormdataImage(value: imageUrl), rank: nil))
         
-        let viewModel = PlantDetailViewModel(plant: mockPlant, router: .previewMock())
+        let viewModel = PlantDetailViewModel(plant: mockPlant, selected: true, router: .previewMock())
         
         return NavigationView {
             PlantDetailScreenView(viewModel: viewModel)
