@@ -56,6 +56,7 @@
 		FA11AA5E2AD7539D00934D57 /* SelectedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA5D2AD7539D00934D57 /* SelectedScreenView.swift */; };
 		FA11AA602AD77D6A00934D57 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA5F2AD77D6A00934D57 /* SettingsTableView.swift */; };
 		FA11AA622AD77EAC00934D57 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA612AD77EAC00934D57 /* VisualEffectView.swift */; };
+		FA11AA642ADB6B8300934D57 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA632ADB6B8300934D57 /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		FA11AA5D2AD7539D00934D57 /* SelectedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedScreenView.swift; sourceTree = "<group>"; };
 		FA11AA5F2AD77D6A00934D57 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		FA11AA612AD77EAC00934D57 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		FA11AA632ADB6B8300934D57 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				E19D69342AC4DC8000C9D797 /* JustifyCardView.swift */,
 				E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */,
 				FA11AA612AD77EAC00934D57 /* VisualEffectView.swift */,
+				FA11AA632ADB6B8300934D57 /* BackButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				FA11AA5E2AD7539D00934D57 /* SelectedScreenView.swift in Sources */,
 				E1EE7DDB2ABE1B9E0087A2D0 /* LevelModel.swift in Sources */,
 				FA11AA602AD77D6A00934D57 /* SettingsTableView.swift in Sources */,
+				FA11AA642ADB6B8300934D57 /* BackButton.swift in Sources */,
 				E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */,
 				E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */,
 				E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */,
@@ -623,13 +627,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4DUTCP7Z6J;
+				DEVELOPMENT_TEAM = 4ZN626CZK5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -654,13 +659,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4DUTCP7Z6J;
+				DEVELOPMENT_TEAM = 4ZN626CZK5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
