@@ -13,22 +13,29 @@ import Moya
 
 class JustifyViewModel: ObservableObject {
     
-    @Published var plants: [FormdataSuggestion]
+    @Published var justifyPlants: [FormdataSuggestion]
     @Published var selected = false
     @Published var isFullDescriptionVisible = false
-    
-    private let router: UnownedRouter<HomeRoute>
-    
-    init(
-        plants: [FormdataSuggestion],
-        router: UnownedRouter<HomeRoute>
-    ) {
-        self.plants = plants
-        self.router = router
+    @Published var plants: [FormdataSuggestion] = [] {
+        didSet {
+            storage.save(plants: plants)
+        }
     }
     
-    func showDetailScreen(plant: FormdataSuggestion) {
-        router.trigger(.details(plant))
+    private let router: UnownedRouter<HomeRoute>
+    private let storage = PlantsStorage()
+    
+    init(
+        justifyPlants: [FormdataSuggestion],
+        router: UnownedRouter<HomeRoute>
+    ) {
+        self.justifyPlants = justifyPlants
+        self.router = router
+        self.plants = storage.load()
+    }
+    
+    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
+        router.trigger(.details(plant, selected))
     }
 }
 

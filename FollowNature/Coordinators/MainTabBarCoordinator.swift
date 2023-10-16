@@ -15,7 +15,7 @@ enum TabBarRoute: Route {
 class MainTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
     private let homeRouter: StrongRouter<HomeRoute>
     private let notepadRouter: StrongRouter<NotepadRoute>
-    private let profileRouter: StrongRouter<ProfileRoute>
+    private let settingsRouter: StrongRouter<SettingsRoute>
     
     convenience init() {
         
@@ -31,24 +31,25 @@ class MainTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
         let notepadCoordinator = NotepadCoordinator()
         notepadCoordinator.rootViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass.circle"), tag: 1)
         
-        let profileCoordinator = ProfileCoordinator()
-        profileCoordinator.rootViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.crop.circle"), tag: 2)
+        let settingsCoordinator = SettingsCoordinator()
+        settingsCoordinator.rootViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.crop.circle"), tag: 2)
         
         self.init(
             homeRouter: homeCoordinator.strongRouter,
             notepadRouter: notepadCoordinator.strongRouter,
-            profileRouter: profileCoordinator.strongRouter
+            settingsRouter: settingsCoordinator.strongRouter
         )
     }
     
     init(
         homeRouter: StrongRouter<HomeRoute>,
         notepadRouter: StrongRouter<NotepadRoute>,
-        profileRouter: StrongRouter<ProfileRoute>
+        settingsRouter: StrongRouter<SettingsRoute>
     ) {
         self.homeRouter = homeRouter
         self.notepadRouter = notepadRouter
-        self.profileRouter = profileRouter
-        super.init(tabs: [homeRouter, notepadRouter, profileRouter],select: homeRouter)
+        self.settingsRouter = settingsRouter
+        super.init(tabs: [homeRouter, notepadRouter, settingsRouter],select: homeRouter)
+        rootViewController.view.backgroundColor = .white
     }
 }

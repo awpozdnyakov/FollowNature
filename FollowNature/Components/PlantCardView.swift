@@ -9,39 +9,35 @@ import SwiftUI
 
 struct PlantCardView: View {
     
-    private let name: String
-    private let image: URL?
-    private let description: String
+    private let plant: FormdataSuggestion
+//    @Binding var plants: [FormdataSuggestion]
+    @Binding var selected: Bool
     private let select: () -> Void
     private let details: () -> Void
-    @Binding var selected: Bool
-    
+
     init(
-        name: String,
-        image: URL?,
-        description: String,
+        plant: FormdataSuggestion,
+//        plants: Binding<[FormdataSuggestion]>,
+        selected: Binding<Bool>,
         select: @escaping () -> Void,
-        details: @escaping () -> Void,
-        selected: Binding<Bool>
+        details: @escaping () -> Void
     ) {
-        self.name = name
-        self.image = image
-        self.description = description
+        self.plant = plant
+//        self._plants = plants
+        self._selected = selected
         self.select = select
         self.details = details
-        self._selected = selected
     }
     
     var body: some View {
         HStack(spacing: 15) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
-                    Text(name)
+                    Text(plant.name)
                         .font(.system(size: 22, weight: .bold))
                     Spacer()
                     Button {
-                        self.select()
-                        selected.toggle()
+                        select()
                     } label: {
                         Image(systemName: "ladybug")
                             .resizable()
@@ -50,12 +46,12 @@ struct PlantCardView: View {
                     .frame(width: 33, height: 37)
                     .foregroundColor(selected ? Asset.Colors.green.swiftUIColor : Asset.Colors.greenLight.swiftUIColor)
                 }
-                Text(description)
+                Text(plant.details.description.value)
                     .font(.system(size: 15, weight: .medium))
                     .foregroundColor(Asset.Colors.textSecondary.swiftUIColor)
                 Spacer()
                 Button {
-                    self.details()
+                    details()
                 } label: {
                     HStack {
                         Spacer()
@@ -67,10 +63,10 @@ struct PlantCardView: View {
                     }.frame(height: 30)
                         .background(
                             RoundedRectangle(cornerRadius: 7)
-                                .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2))
+                                .stroke(Asset.Colors.greenLight.swiftUIColor, lineWidth: 2))
                 }
             }
-            AsyncImage(url: image) { image in
+            AsyncImage(url: plant.details.image.value) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -95,6 +91,6 @@ struct PlantCardView: View {
 
 struct PlantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PlantCardView(name: "Leucojum vernum", image: nil, description: "Leucojum vernum, called the spring snowflake, is a species of flowering plant in the family Amaryllidaceae.", select: {}, details: {}, selected: .constant(true))
+        PlantCardView(plant: FormdataSuggestion(id: "", name: "Leucojum vernum", probability: 0.95, details: FormdataDetails(common_names: nil, taxonomy: nil, url: nil, description: DescriptionValue(value: "Leucojum vernum, called the spring snowflake, is a species of flowering plant in the family Amaryllidaceae."), synonyms: nil, image: FormdataImage(value: nil), rank: nil)), selected: .constant(true), select: {}, details: {})
     }
 }

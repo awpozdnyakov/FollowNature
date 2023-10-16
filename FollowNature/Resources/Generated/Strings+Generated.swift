@@ -10,11 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+<<<<<<< HEAD
   /// Все
   internal static let allSelected = L10n.tr("Localizable", "allSelected", fallback: "Все")
   /// Нажими на жучка
   /// Создай свой список “Выбранное
   internal static let clickOntheBugOrCreateYourSelectedList = L10n.tr("Localizable", "clickOntheBugOrCreateYourSelectedList", fallback: "Нажими на жучка\nСоздай свой список “Выбранное")
+=======
+  /// Андрей
+  internal static let andrew = L10n.tr("Localizable", "andrew", fallback: "Андрей")
+  /// Связь с разработчиками
+  internal static let connection = L10n.tr("Localizable", "connection", fallback: "Связь с разработчиками")
+>>>>>>> develop
   /// Узнать больше
   internal static let details = L10n.tr("Localizable", "details", fallback: "Узнать больше")
   /// Введите название растения
@@ -26,14 +33,59 @@ internal enum L10n {
   internal static let home = L10n.tr("Localizable", "home", fallback: "Главная")
   /// Сделай фото чтобы повысить его!
   internal static let makeAPhoto = L10n.tr("Localizable", "makeAPhoto", fallback: "Сделай фото чтобы повысить его!")
+  /// Мое “Выбраное”
+  internal static let mySelected = L10n.tr("Localizable", "mySelected", fallback: "Мое “Выбраное”")
   /// Блокнот
   internal static let notepad = L10n.tr("Localizable", "notepad", fallback: "Блокнот")
   /// Профиль
   internal static let profile = L10n.tr("Localizable", "profile", fallback: "Профиль")
+<<<<<<< HEAD
   /// Выбранное
   internal static let selected = L10n.tr("Localizable", "selected", fallback: "Выбранное")
+=======
+  /// Регина
+  internal static let rehina = L10n.tr("Localizable", "rehina", fallback: "Регина")
+  /// Запросов выполнено
+  internal static let requests = L10n.tr("Localizable", "requests", fallback: "Запросов выполнено")
+  /// Шамиль
+  internal static let shamil = L10n.tr("Localizable", "shamil", fallback: "Шамиль")
+  /// Тилек
+  internal static let tilek = L10n.tr("Localizable", "tilek", fallback: "Тилек")
+  /// https://github.com/awpozdnyakov
+  internal static let urlAndrew = L10n.tr("Localizable", "urlAndrew", fallback: "https://github.com/awpozdnyakov")
+  /// https://github.com/riitterz
+  internal static let urlRehina = L10n.tr("Localizable", "urlRehina", fallback: "https://github.com/riitterz")
+  /// https://github.com/ShAglarov
+  internal static let urlShamil = L10n.tr("Localizable", "urlShamil", fallback: "https://github.com/ShAglarov")
+  /// https://github.com/ti1ek
+  internal static let urlTilek = L10n.tr("Localizable", "urlTilek", fallback: "https://github.com/ti1ek")
+>>>>>>> develop
   /// Твой уровень
   internal static let yourLevel = L10n.tr("Localizable", "yourLevel", fallback: "Твой уровень")
+    /// 0 поисков
+    internal static let zeroSearch = L10n.tr("Localizable", "zeroSearch", fallback: "0 поисков")
+    /// 10 поисков
+    internal static let tenSearch = L10n.tr("Localizable", "tenSearch", fallback: "10 поисков")
+    /// 30 поисков
+    internal static let thirtySearch = L10n.tr("Localizable", "thirtySearch", fallback: "30 поисков")
+    /// 50 поисков
+    internal static let fiftySearch = L10n.tr("Localizable", "fiftySearch", fallback: "50 поисков")
+    /// Показать меньше
+    internal static let showMore = L10n.tr("Localizable", "showMore", fallback: "Показать больше")
+    /// Показать меньше
+    internal static let showTranslate = L10n.tr("Localizable", "showTranslate", fallback: "Показать перевод")
+    /// Убрать из списка “Выбраное”
+    internal static let deleteFromFavorite = L10n.tr("Localizable", "deleteFromFavorite", fallback: "Убрать из списка “Выбраное”")
+    /// Род
+    internal static let taxonomy = L10n.tr("Localizable", "taxonomy", fallback: "Род:")
+    /// Порядок
+    internal static let order = L10n.tr("Localizable", "order", fallback: "Порядок:")
+    /// Семейство
+    internal static let family = L10n.tr("Localizable", "family", fallback: "Семейство:")
+    /// Тип
+    internal static let phylum = L10n.tr("Localizable", "phylum", fallback: "Тип:")
+    /// Царство
+    internal static let kingdom = L10n.tr("Localizable", "kingdom", fallback: "Царство:")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

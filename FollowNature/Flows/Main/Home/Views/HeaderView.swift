@@ -9,38 +9,57 @@ import SwiftUI
 
 struct HeaderView: View {
     
-    private let level: String
+    @State private var isModalPresented = false
+    private let level: UserLevel
     
-    init (
-        level: String
-    ) {
-        self.level = "Pro"
-    }
+    init(level: UserLevel) {
+            self.level = level
+        }
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack {
-                Text(L10n.yourLevel)
-                    .font(.system(size: 22))
-                Text(level)
-                    .font(.system(size: 22, weight: .heavy))
-                    .foregroundColor(Asset.Colors.green.swiftUIColor)
+        ZStack {
+            VStack(alignment: .leading, spacing: 13) {
+                HStack {
+                    Text(L10n.yourLevel)
+                        .font(.system(size: 20))
+                    Text(level.rawValue)
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(Asset.Colors.green.swiftUIColor)
+                    Spacer()
+                    
+                }
+                Text(L10n.makeAPhoto)
+                    .font(.system(size: 20))
+            }
+            .padding(.horizontal, 15)
+
+            HStack(alignment: .top) {
                 Spacer()
-                Button {
-                } label: {
-                    Image(uiImage: Asset.Images.follow.image)
+                Button(action: {
+                    withAnimation {
+                        isModalPresented.toggle()
+                    }
+                }) {
+                    Image(uiImage: Asset.Images.level.image)
                         .resizable()
-                        .frame(width: 45, height: 45)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 80, height: 80)
+                        .padding(.bottom, 60)
+                        .padding(.trailing, 5)
                 }
             }
-            Text(L10n.makeAPhoto)
-                .font(.system(size: 22))
         }
-        .padding(.horizontal, 15)
+        .padding(.bottom, 70)
+        .padding(.trailing, 20)
+        .fullScreenCover(isPresented: $isModalPresented) {
+            LevelsInfoModalView(isModalPresented: $isModalPresented)
+        }
     }
 }
 
+
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(level: "Pro")
+        HeaderView(level: .specialist)
     }
 }
