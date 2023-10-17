@@ -49,8 +49,8 @@ struct HomeScreenView: View {
             .padding(.all, 15)
             ScrollView {
                 TabView {
-                    LazyVStack(spacing: 18) {
-                        ForEach(viewModel.plants) { cardData in
+                    LazyVStack(spacing: 15) {
+                        ForEach(viewModel.popularPlants) { cardData in
                             PlantCardView(
                                 plant: cardData,
                                 selected: .constant(true),
@@ -58,13 +58,13 @@ struct HomeScreenView: View {
                                 details: {
                                     viewModel.showDetailScreen(
                                         plant: cardData,
-                                        selected: viewModel.plants.contains(where: { $0.id == cardData.id })
+                                        selected: viewModel.popularPlants.contains(where: { $0.id == cardData.id })
                                     )}
                             )}
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: CGFloat(viewModel.plants.count * 225 + 30))
+                .frame(height: CGFloat(viewModel.popularPlants.count * 220))
             }
             Spacer()
         }

@@ -10,20 +10,17 @@ import SwiftUI
 struct PlantCardView: View {
     
     private let plant: FormdataSuggestion
-    //    @Binding var plants: [FormdataSuggestion]
     @Binding var selected: Bool
     private let select: () -> Void
     private let details: () -> Void
     
     init(
         plant: FormdataSuggestion,
-        //        plants: Binding<[FormdataSuggestion]>,
         selected: Binding<Bool>,
         select: @escaping () -> Void,
         details: @escaping () -> Void
     ) {
         self.plant = plant
-        //        self._plants = plants
         self._selected = selected
         self.select = select
         self.details = details
@@ -94,6 +91,7 @@ struct PlantCardView: View {
                 )
         )
         .padding(.horizontal, 15)
+        .frame(height: 205)
         .frame(maxWidth: .infinity)
         .scaledToFit()
     }

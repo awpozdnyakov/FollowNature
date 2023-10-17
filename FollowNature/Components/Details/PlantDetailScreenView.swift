@@ -10,7 +10,6 @@ import SwiftUI
 struct PlantDetailScreenView: View {
     
     @ObservedObject var viewModel: PlantDetailViewModel
-    @State private var isTranslateButtonTapped: Bool = false
     
     init(viewModel: PlantDetailViewModel) {
         self.viewModel = viewModel
@@ -39,7 +38,6 @@ struct PlantDetailScreenView: View {
                                 .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 3))
                 }.frame(height: 430)
             }
-            
             HStack {
                 Text(viewModel.plant.name)
                     .font(.system(size: 28, weight: .bold))
@@ -60,36 +58,32 @@ struct PlantDetailScreenView: View {
             Text(viewModel.translatedDescription ?? (viewModel.isFullDescriptionVisible ? viewModel.plant.details.description.value : String(viewModel.plant.details.description.value.prefix(500))))
                 .font(.system(size: 18, weight: .regular))
                 .foregroundColor(.black)
-            
+            if !viewModel.isTranslateButtonTapped {
+                Button(action: {
+                    viewModel.translateDescription()
+                    viewModel.isTranslateButtonTapped.toggle() // this will set it to true
+                }) {
+                    HStack {
+                        Spacer()
+                        Text(L10n.showTranslate)
+                            .foregroundColor(Asset.Colors.green.swiftUIColor)
+                            .bold()
+                    }
+                    .padding(.trailing)
+                    .padding(.top, 0.5)
+                }
+            }
             if viewModel.plant.details.description.value.count > 500 {
-                if viewModel.isFullDescriptionVisible {
-                    if !isTranslateButtonTapped {
-                        Button(action: {
-                            viewModel.translateDescription()
-                            isTranslateButtonTapped.toggle() // this will set it to true
-                        }) {
-                            HStack {
-                                Spacer()
-                                Text(L10n.showTranslate)
-                                    .foregroundColor(Asset.Colors.green.swiftUIColor)
-                                    .bold()
-                            }
-                            .padding(.trailing)
-                            .padding(.top, 0.5)
-                        }
+                Button(action: {
+                    viewModel.toggleDescriptionVisibility()
+                }) {
+                    HStack {
+                        Spacer()
+                        Text(L10n.showMore)
+                            .foregroundColor(Asset.Colors.green.swiftUIColor)
                     }
-                } else {
-                    Button(action: {
-                        viewModel.toggleDescriptionVisibility()
-                    }) {
-                        HStack {
-                            Spacer()
-                            Text(L10n.showMore)
-                                .foregroundColor(Asset.Colors.green.swiftUIColor)
-                        }
-                        .padding(.trailing)
-                        .padding(.top, 0.5)
-                    }
+                    .padding(.trailing)
+                    .padding(.top, 0.5)
                 }
             }
             Divider()
@@ -103,23 +97,25 @@ struct PlantDetailScreenView: View {
                 TaxonomyRow(title: L10n.kingdom, value: viewModel.plant.details.taxonomy?.kingdom ?? "")
             }
             .padding(.vertical, 10)
-            GeometryReader { geometry in
-                Button(action: {
-                    viewModel.unSelect()
-                }) {
-                    Text(L10n.deleteFromFavorite)
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundColor(.black)
-                        .frame(width: geometry.size.width - 5, height: 50)
-                        .background(Color.white)
-                        .cornerRadius(40)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30)
-                                .inset(by: 1.5)
-                                .stroke(Color(red: 1, green: 0.01, blue: 0.01), lineWidth: 1))
+            if viewModel.selected {
+                GeometryReader { geometry in
+                    Button(action: {
+                        viewModel.unSelect()
+                    }) {
+                        Text(L10n.deleteFromFavorite)
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.black)
+                            .frame(width: geometry.size.width - 5, height: 50)
+                            .background(Color.white)
+                            .cornerRadius(40)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .inset(by: 1.5)
+                                    .stroke(Color(red: 1, green: 0.01, blue: 0.01), lineWidth: 1))
+                    }
                 }
+                .padding(.bottom, 50)
             }
-            .padding(.bottom, 50)
         }
         .padding(.horizontal, 15)
     }

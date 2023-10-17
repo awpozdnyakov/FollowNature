@@ -91,6 +91,7 @@ struct JustifyCardView: View {
                 )
         )
         .padding(.horizontal, 15)
+        .frame(height: 205)
         .frame(maxWidth: .infinity)
         .scaledToFit()
     }
@@ -109,7 +110,7 @@ struct JustifyCardView: View {
                     .rotationEffect(Angle(degrees: -90))
                     .animation(.easeInOut(duration: 0.5), value: progress)
                 VStack{
-                    Text(String(format: "%.0f/10", progress * 10))
+                    Text(String(format: "%.3f", progress))
                         .font(.system(size: 17))
                         .foregroundColor(Asset.Colors.textPrimary.swiftUIColor)
                 }

@@ -12,13 +12,15 @@ import XCoordinator
 import Moya
 
 final class NotepadViewModel: ObservableObject {
+    
     @Published var plants: [FormdataSuggestion] = [] {
         didSet {
             storage.save(plants: plants)
         }
     }
+    @Published var page: PadPage = .selected
     
-    private let storage = PlantsStorage()
+    private let storage = PopularPlantsStorage()
     private let router: UnownedRouter<NotepadRoute>
     
     init(
@@ -27,4 +29,9 @@ final class NotepadViewModel: ObservableObject {
         self.router = router
         self.plants = storage.load()
     }
+}
+
+enum PadPage: Int {
+    case selected
+    case lookingFor
 }
