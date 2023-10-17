@@ -12,6 +12,8 @@
 		072ED8AF2AC95D84007CDE80 /* PlantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */; };
 		072ED8B12AC95D90007CDE80 /* PlantDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */; };
 		4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */; };
+		4BF3F9402ADDEB950050FBF5 /* NotepadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */; };
+		4BF3F9422ADDEBC80050FBF5 /* NotepadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */; };
 		E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F02AAF985A00FE0F2B /* AppDelegate.swift */; };
 		E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */; };
 		E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F42AAF985A00FE0F2B /* ViewController.swift */; };
@@ -68,6 +70,8 @@
 		072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewModel.swift; sourceTree = "<group>"; };
 		072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailScreenView.swift; sourceTree = "<group>"; };
 		4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsStorage.swift; sourceTree = "<group>"; };
+		4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotepadScreenView.swift; path = FollowNature/Flows/NotepadScreenView.swift; sourceTree = SOURCE_ROOT; };
+		4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadViewModel.swift; sourceTree = "<group>"; };
 		E12046ED2AAF985A00FE0F2B /* FollowNature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowNature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12046F02AAF985A00FE0F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,15 @@
 				E15A1FB42ACC5CBD0045F9DC /* Views */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		4BF3F93E2ADDEB800050FBF5 /* Notepad */ = {
+			isa = PBXGroup;
+			children = (
+				4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */,
+				4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */,
+			);
+			path = Notepad;
 			sourceTree = "<group>";
 		};
 		E12046E42AAF985A00FE0F2B = {
@@ -298,6 +311,7 @@
 		E1BA5AA92ABCCCF600C444DD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4BF3F93E2ADDEB800050FBF5 /* Notepad */,
 				E15A1FAE2ACC51B80045F9DC /* Home */,
 				E15A1FAF2ACC51F30045F9DC /* Justify */,
 				072ED8AD2AC95C8B007CDE80 /* Details */,
@@ -449,6 +463,7 @@
 				E120472E2AAFBDAF00FE0F2B /* PreviewMock.swift in Sources */,
 				E19D69422AC5E8BC00C9D797 /* Base64ResponseModel.swift in Sources */,
 				E1EE7DE22ABF981F0087A2D0 /* ObtainUsageInfo.swift in Sources */,
+				4BF3F9422ADDEBC80050FBF5 /* NotepadViewModel.swift in Sources */,
 				E1EE7DE82AC0CCF10087A2D0 /* PlantModel.swift in Sources */,
 				FA11AA522AD4ADFE00934D57 /* SelectedButton.swift in Sources */,
 				E1EE7DE02ABF934F0087A2D0 /* HealthAssessmentModel.swift in Sources */,
@@ -491,6 +506,7 @@
 				E1BA5AAC2ABCCD2100C444DD /* HeaderView.swift in Sources */,
 				0725BF1E2ADC0FD600C65CC7 /* LevelsInfoView.swift in Sources */,
 				E19D693E2AC5E7C800C9D797 /* FormdataResponseModel.swift in Sources */,
+				4BF3F9402ADDEB950050FBF5 /* NotepadScreenView.swift in Sources */,
 				FA11AA4D2AD45E1400934D57 /* SettingsScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
