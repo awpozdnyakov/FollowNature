@@ -18,8 +18,13 @@ struct JustifyScreenView: View {
     
     var body: some View {
         ScrollView {
+            HStack {
+                BackButton()
+                Spacer()                    
+            }
+            .padding(.horizontal, 15)
             TabView {
-                LazyVStack(spacing: 15) {
+                LazyVStack(spacing: 18) {
                     ForEach(viewModel.justifyPlants) { cardData in
                         JustifyCardView(
                             name: cardData.name,
@@ -37,7 +42,7 @@ struct JustifyScreenView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: CGFloat(viewModel.justifyPlants.count * 225 + 30))
         }
-        .navigationTitle("Точность совпадения:")
+        .navigationTitle("Точность совпадения").font(.system(size: 28, weight: .bold))
     }
 }
 

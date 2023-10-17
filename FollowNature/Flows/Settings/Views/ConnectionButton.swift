@@ -29,7 +29,7 @@ struct ConnectionButton: View {
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                     Text(L10n.connection)
                         .foregroundColor(.black)
-                        .font(.system(size: 20, weight: .medium))
+                        .font(.system(size: 18, weight: .medium))
                     Spacer()
                 }
                 .padding(.leading, 20)

@@ -652,6 +652,8 @@
 				DEVELOPMENT_TEAM = 4ZN626CZK5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Сделать фото растения";
+				INFOPLIST_KEY_NSPrincipalClass = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -663,7 +665,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Performance.FollowNature;
+				PRODUCT_BUNDLE_IDENTIFIER = FollowNature.r;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -684,6 +686,8 @@
 				DEVELOPMENT_TEAM = 4ZN626CZK5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Сделать фото растения";
+				INFOPLIST_KEY_NSPrincipalClass = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -695,7 +699,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Performance.FollowNature;
+				PRODUCT_BUNDLE_IDENTIFIER = FollowNature.r;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

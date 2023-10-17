@@ -12,6 +12,8 @@ struct SelectedScreenView: View {
         VStack {
             BackButton()
                 .ignoresSafeArea(.all)
+                .padding(.bottom, 10)
+
             Spacer()
         }
     }
