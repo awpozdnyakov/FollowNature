@@ -12,7 +12,6 @@ import XCoordinator
 import Moya
 
 final class SettingsViewModel: ObservableObject {
-    
     @Published var openDevelopersTable = false
     
     private let router: UnownedRouter<SettingsRoute>

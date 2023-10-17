@@ -1,5 +1,5 @@
 //
-//  SelectedScreenView.swift
+//  LoaderView.swift
 //  FollowNature
 //
 //  Created by Macbook on 11.10.2023.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct SelectedScreenView: View {
+struct LoaderView: View {
+    
     var body: some View {
         VStack {
             BackButton()
                 .ignoresSafeArea(.all)
                 .padding(.bottom, 10)
-
             Spacer()
         }
     }
@@ -21,6 +21,6 @@ struct SelectedScreenView: View {
 
 struct SelectedScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectedScreenView()
+        LoaderView()
     }
 }

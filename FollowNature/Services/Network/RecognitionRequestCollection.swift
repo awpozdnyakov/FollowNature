@@ -40,7 +40,12 @@ extension RecognitionRequestCollection: TargetType {
         switch self {
         case .photoFormdata(let photo):
             let imageData = photo.jpegData(compressionQuality: 0.7)!
-            let formData: [Moya.MultipartFormData] = [Moya.MultipartFormData(provider: .data(imageData), name: "image", fileName: "asds.png", mimeType: "image/jpeg")]
+            let formData: [Moya.MultipartFormData] = [
+                Moya.MultipartFormData(
+                    provider: .data(imageData),
+                    name: "image",
+                    fileName: "asds.png",
+                    mimeType: "image/jpeg")]
             
             return .uploadCompositeMultipart(formData, urlParameters: ["details": "common_names,url,description,taxonomy,rank,gbif_id,inaturalist_id,image,synonyms,edible_parts,watering,propagation_methods"])
         case .photoBase64(photo: let photo):

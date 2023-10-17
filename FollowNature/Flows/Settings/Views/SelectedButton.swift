@@ -11,7 +11,7 @@ struct SelectedButton: View {
     
     var body: some View {
         VStack {
-            NavigationLink(destination: SelectedScreenView()) {
+            NavigationLink(destination: LoaderView()) {
                 HStack(spacing: 23) {
                     Image(systemName: "ladybug")
                         .resizable()

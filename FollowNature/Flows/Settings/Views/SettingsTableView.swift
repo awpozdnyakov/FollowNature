@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsTableView: View {
-    
     @ObservedObject private var viewModel: SettingsViewModel
     
     init(viewModel: SettingsViewModel) {

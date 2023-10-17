@@ -9,7 +9,6 @@ import SwiftUI
 import XCoordinator
 
 struct JustifyScreenView: View {
-    
     @ObservedObject private var viewModel: JustifyViewModel
     
     init(viewModel: JustifyViewModel) {

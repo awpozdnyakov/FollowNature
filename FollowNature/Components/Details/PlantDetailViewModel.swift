@@ -12,7 +12,6 @@ import XCoordinator
 import Alamofire
 
 class PlantDetailViewModel: ObservableObject {
-        
     @Published var selectedPlants: [FormdataSuggestion] = [] {
         didSet {
             storage.save(plants: selectedPlants)
