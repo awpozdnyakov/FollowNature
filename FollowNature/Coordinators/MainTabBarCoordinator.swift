@@ -22,17 +22,18 @@ class MainTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
+            appearance.stackedLayoutAppearance.normal.iconColor = UIColor(dynamicProvider: Asset.Colors.greenLight.color)
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
         
         let homeCoordinator = HomeCoordinator()
-        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "camera.macro.circle"), tag: 0)
+        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Главная", image: UIImage(systemName: "camera.macro"), tag: 0)
         
         let notepadCoordinator = NotepadCoordinator()
-        notepadCoordinator.rootViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass.circle"), tag: 1)
+        notepadCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         
         let settingsCoordinator = SettingsCoordinator()
-        settingsCoordinator.rootViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.crop.circle"), tag: 2)
+        settingsCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), tag: 2)
         
         self.init(
             homeRouter: homeCoordinator.strongRouter,
