@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsScreenView: View {
-    
     @ObservedObject private var viewModel: SettingsViewModel
     
     init(viewModel: SettingsViewModel) {

@@ -12,7 +12,6 @@ import XCoordinator
 import Moya
 
 class JustifyViewModel: ObservableObject {
-    
     @Published var justifyPlants: [FormdataSuggestion]
     @Published var selected = false
     @Published var isFullDescriptionVisible = false

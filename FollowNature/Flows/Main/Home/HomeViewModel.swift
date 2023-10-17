@@ -12,7 +12,6 @@ import XCoordinator
 import Moya
 
 final class HomeViewModel: ObservableObject {
-    
     @Published var popularPlants: [FormdataSuggestion] = [] {
         didSet {
             storage.save(plants: popularPlants)

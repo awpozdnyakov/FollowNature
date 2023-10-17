@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    
     @ObservedObject private var viewModel: HomeViewModel
     
     init(viewModel: HomeViewModel) {

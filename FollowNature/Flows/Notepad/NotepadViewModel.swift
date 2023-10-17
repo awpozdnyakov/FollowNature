@@ -12,7 +12,6 @@ import XCoordinator
 import Moya
 
 final class NotepadViewModel: ObservableObject {
-    
     @Published var plants: [FormdataSuggestion] = [] {
         didSet {
             storage.save(plants: plants)

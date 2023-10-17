@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListPageView: View {
-    
     private let plants: [FormdataSuggestion]
     @Binding var selected: Bool
     private let select: () -> Void

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct JustifyCardView: View {
-    
     private let name: String
     private let image: URL?
     private let description: String

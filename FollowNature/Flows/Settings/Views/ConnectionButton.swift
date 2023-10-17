@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ConnectionButton: View {
-    
     @Binding var openDevelopersTable: Bool
     
     init(openDevelopersTable: Binding<Bool>) {

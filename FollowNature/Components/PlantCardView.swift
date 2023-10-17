@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PlantCardView: View {
-    
     private let plant: FormdataSuggestion
     @Binding var selected: Bool
     private let select: () -> Void

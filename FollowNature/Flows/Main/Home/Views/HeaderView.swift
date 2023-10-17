@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HeaderView: View {
-    
     @State private var isModalPresented = false
+    
     private let level: UserLevel
     
     init(level: UserLevel) {

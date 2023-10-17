@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NotepadScreenView: View {
-    
     @ObservedObject private var viewModel: NotepadViewModel
     
     init(viewModel: NotepadViewModel) {
