@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum ConsultationPage: Int {
-    case pending
-    case finished
-}
-
-
 struct NotepadScreenView: View {
     
     @ObservedObject private var viewModel: NotepadViewModel
@@ -20,48 +14,51 @@ struct NotepadScreenView: View {
     init(viewModel: NotepadViewModel) {
         self.viewModel = viewModel
         UISegmentedControl.appearance().selectedSegmentTintColor = Asset.Colors.green.color
+        UISegmentedControl.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18)], for: .normal)
     }
     @State private var searchText: String = ""
-    @State var page = ConsultationPage.pending
+    @State var page = PadPage.selected
     
     var body: some View {
-        VStack(spacing: 0) {
-            TextField("L10n.enterPlantName", text: $searchText)
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 10).strokeBorder())
-                .padding(.horizontal, 15)
-                .padding(.top, 50)
-                .padding(.bottom, 20)
-            Picker("title", selection: $page) {
-                Text("L10n.selected")
-                    .tag(ConsultationPage.pending)
-                Text("L10n.allSelected")
-                    .tag(ConsultationPage.finished)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal, 15)
-            if page == .pending {
-                Text("L10n.clickOntheBugOrCreateYourSelectedList")
-                    .multilineTextAlignment(.center)
-                    .font(.headline)
-                    .padding(.top, 50)
-                    .foregroundColor(.gray)
-            } else {
-                TabView {
-                    LazyVStack(spacing: 15) {
-                        ForEach(viewModel.plants) { cardData in
-                            PlantCardView(plant: cardData,
-                                          selected: .constant(true),
-                                          select: {},
-                                          details: {})
-                        }
-                    }
+            VStack(spacing: 0) {
+                TextField(L10n.enterPlantName, text: $searchText)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder())
+                    .padding(.horizontal, 15)
+                    .padding(.bottom, 20)
+                Picker("title", selection: $page) {
+                    Text(L10n.selected)
+                        .font(.system(size: 15))
+                        .tag(PadPage.selected)
+                    Text(L10n.allSelected)
+                        .font(.system(size: 18))
+                        .tag(PadPage.lookingFor)
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: CGFloat(viewModel.plants.count * 225 + 30))
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal, 15)
+                .padding(.bottom, 15)
+                ScrollView {
+                    TabView(selection: $viewModel.page) {
+                        ListPageView(plants: viewModel.plants,
+                                     selected: .constant(true),
+                                     select: {},
+                                     details: {})
+                        .tag(PadPage.selected)
+                        ListPageView(plants: viewModel.plants,
+                                     selected: .constant(true),
+                                     select: {},
+                                     details: {})
+                        .tag(PadPage.lookingFor)
+                    }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .frame(height: CGFloat(viewModel.plants.count * 220))
+                }
+                Spacer()
             }
-            Spacer()
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.top, 50)
+            .padding(.bottom, 50)
+            .ignoresSafeArea(.all)
     }
 }
 

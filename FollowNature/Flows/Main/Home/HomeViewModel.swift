@@ -13,9 +13,9 @@ import Moya
 
 final class HomeViewModel: ObservableObject {
     
-    @Published var plants: [FormdataSuggestion] = [] {
+    @Published var popularPlants: [FormdataSuggestion] = [] {
         didSet {
-            storage.save(plants: plants)
+            storage.save(plants: popularPlants)
             updateLevel()
         }
     }
@@ -28,7 +28,7 @@ final class HomeViewModel: ObservableObject {
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
-    private let storage = PlantsStorage()
+    private let storage = PopularPlantsStorage()
     private var cancellable: AnyCancellable?
     
     init(
@@ -37,7 +37,7 @@ final class HomeViewModel: ObservableObject {
     ) {
         self.router = router
         self.service = service
-        self.plants = storage.load()
+        self.popularPlants = storage.load()
         self.userLevel = UserPreferences.shared.userLevel
         updateLevel()
     }
@@ -85,8 +85,8 @@ final class HomeViewModel: ObservableObject {
                 if let suggestions = result.result?.classification.suggestions {
                     self.justifyPlants = suggestions
                     if let positive = self.justifyPlants.first {
-                        if !self.plants.contains(where: { $0.id == positive.id }) {
-                            self.plants.append(positive)
+                        if !self.popularPlants.contains(where: { $0.id == positive.id }) {
+                            self.popularPlants.append(positive)
                         }
                         self.showJustifyScreen(justifyPlants: self.justifyPlants)
                     }

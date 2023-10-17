@@ -23,7 +23,7 @@ class JustifyViewModel: ObservableObject {
     }
     
     private let router: UnownedRouter<HomeRoute>
-    private let storage = PlantsStorage()
+    private let storage = PopularPlantsStorage()
     
     init(
         justifyPlants: [FormdataSuggestion],

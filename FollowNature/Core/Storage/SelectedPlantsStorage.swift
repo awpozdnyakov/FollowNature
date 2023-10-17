@@ -1,13 +1,13 @@
 //
-//  PlantsStorage.swift
+//  SelectedPlantsStorage.swift
 //  FollowNature
 //
-//  Created by Shamil Aglarov on 28.09.2023.
+//  Created by Andrey Pozdnyakov on 17.10.2023.
 //
 
 import Foundation
 
-class PlantsStorage {
+class SelectedPlantsStorage {
     
     private let key = "savedPlants"
     
@@ -16,7 +16,7 @@ class PlantsStorage {
             let data = try JSONEncoder().encode(plants)
             UserDefaults.standard.set(data, forKey: key)
         } catch {
-            print("Failed to encode and save plants: \(error)")
+            print("Failed to encode and save popularPlants: \(error)")
         }
     }
     
@@ -25,7 +25,7 @@ class PlantsStorage {
         do {
             return try JSONDecoder().decode([FormdataSuggestion].self, from: data)
         } catch {
-            print("Failed to decode and load plants: \(error)")
+            print("Failed to decode and load popularPlants: \(error)")
             return []
         }
     }

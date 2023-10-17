@@ -11,7 +11,7 @@
 		0725BF232ADC2C6B00C65CC7 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725BF222ADC2C6B00C65CC7 /* UserPreferences.swift */; };
 		072ED8AF2AC95D84007CDE80 /* PlantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */; };
 		072ED8B12AC95D90007CDE80 /* PlantDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */; };
-		4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */; };
+		4BB059682AC5C99B0032A1D2 /* PopularPlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PopularPlantsStorage.swift */; };
 		4BF3F9402ADDEB950050FBF5 /* NotepadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */; };
 		4BF3F9422ADDEBC80050FBF5 /* NotepadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */; };
 		E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F02AAF985A00FE0F2B /* AppDelegate.swift */; };
@@ -48,6 +48,8 @@
 		E1BA5AA82ABCC9F800C444DD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AA72ABCC9F800C444DD /* HomeViewModel.swift */; };
 		E1BA5AAC2ABCCD2100C444DD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AAB2ABCCD2100C444DD /* HeaderView.swift */; };
 		E1BA5AAF2ABCCDA300C444DD /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */; };
+		E1E62D6A2ADEBCB4000DD33E /* SelectedPlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62D692ADEBCB4000DD33E /* SelectedPlantsStorage.swift */; };
+		E1E62D6C2ADEC170000DD33E /* ListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62D6B2ADEC170000DD33E /* ListPageView.swift */; };
 		E1EE7DDB2ABE1B9E0087A2D0 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE7DDA2ABE1B9E0087A2D0 /* LevelModel.swift */; };
 		E1EE7DE02ABF934F0087A2D0 /* HealthAssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */; };
 		E1EE7DE22ABF981F0087A2D0 /* ObtainUsageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE7DE12ABF981F0087A2D0 /* ObtainUsageInfo.swift */; };
@@ -69,7 +71,7 @@
 		0725BF222ADC2C6B00C65CC7 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewModel.swift; sourceTree = "<group>"; };
 		072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailScreenView.swift; sourceTree = "<group>"; };
-		4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsStorage.swift; sourceTree = "<group>"; };
+		4BB059672AC5C99B0032A1D2 /* PopularPlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlantsStorage.swift; sourceTree = "<group>"; };
 		4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotepadScreenView.swift; path = FollowNature/Flows/NotepadScreenView.swift; sourceTree = SOURCE_ROOT; };
 		4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadViewModel.swift; sourceTree = "<group>"; };
 		E12046ED2AAF985A00FE0F2B /* FollowNature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowNature.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,8 @@
 		E1BA5AA72ABCC9F800C444DD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E1BA5AAB2ABCCD2100C444DD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
+		E1E62D692ADEBCB4000DD33E /* SelectedPlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlantsStorage.swift; sourceTree = "<group>"; };
+		E1E62D6B2ADEC170000DD33E /* ListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPageView.swift; sourceTree = "<group>"; };
 		E1EE7DDA2ABE1B9E0087A2D0 /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 		E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAssessmentModel.swift; sourceTree = "<group>"; };
 		E1EE7DE12ABF981F0087A2D0 /* ObtainUsageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainUsageInfo.swift; sourceTree = "<group>"; };
@@ -135,12 +139,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0725BF242ADC4AF000C65CC7 /* Helper */ = {
+		0725BF242ADC4AF000C65CC7 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				4BB059672AC5C99B0032A1D2 /* PopularPlantsStorage.swift */,
+				E1E62D692ADEBCB4000DD33E /* SelectedPlantsStorage.swift */,
 				0725BF222ADC2C6B00C65CC7 /* UserPreferences.swift */,
 			);
-			path = Helper;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		072ED8AD2AC95C8B007CDE80 /* Details */ = {
@@ -158,6 +164,7 @@
 			children = (
 				4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */,
 				4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */,
+				E1E62D6D2ADEC177000DD33E /* Views */,
 			);
 			path = Notepad;
 			sourceTree = "<group>";
@@ -189,7 +196,6 @@
 				E1EE7DD92ABE1B590087A2D0 /* Models */,
 				E12047272AAFB81300FE0F2B /* Resources */,
 				E1BA5A9E2ABCC7BC00C444DD /* Services */,
-				0725BF242ADC4AF000C65CC7 /* Helper */,
 				E12046F42AAF985A00FE0F2B /* ViewController.swift */,
 				E12046F62AAF985A00FE0F2B /* Main.storyboard */,
 				E12046FB2AAF985B00FE0F2B /* LaunchScreen.storyboard */,
@@ -277,6 +283,7 @@
 		E1A586912AC1E516002C295F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0725BF242ADC4AF000C65CC7 /* Storage */,
 				E1A586922AC1E534002C295F /* Constants.swift */,
 			);
 			path = Core;
@@ -303,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BA5AA92ABCCCF600C444DD /* Main */,
+				4BF3F93E2ADDEB800050FBF5 /* Notepad */,
 				FA11AA4B2AD45D4800934D57 /* Settings */,
 			);
 			path = Flows;
@@ -311,10 +319,8 @@
 		E1BA5AA92ABCCCF600C444DD /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4BF3F93E2ADDEB800050FBF5 /* Notepad */,
 				E15A1FAE2ACC51B80045F9DC /* Home */,
 				E15A1FAF2ACC51F30045F9DC /* Justify */,
-				072ED8AD2AC95C8B007CDE80 /* Details */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -332,12 +338,21 @@
 		E1BA5AAD2ABCCD3D00C444DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				072ED8AD2AC95C8B007CDE80 /* Details */,
 				E19D69342AC4DC8000C9D797 /* JustifyCardView.swift */,
 				E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */,
 				FA11AA612AD77EAC00934D57 /* VisualEffectView.swift */,
 				FA11AA632ADB6B8300934D57 /* BackButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E1E62D6D2ADEC177000DD33E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1E62D6B2ADEC170000DD33E /* ListPageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E1EE7DD92ABE1B590087A2D0 /* Models */ = {
@@ -350,7 +365,6 @@
 				E19D693D2AC5E7C800C9D797 /* FormdataResponseModel.swift */,
 				E19D69412AC5E8BC00C9D797 /* Base64ResponseModel.swift */,
 				E19D693B2AC5E6F000C9D797 /* PhotoModel.swift */,
-				4BB059672AC5C99B0032A1D2 /* PlantsStorage.swift */,
 				E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */,
 			);
 			path = Models;
@@ -473,6 +487,7 @@
 				E12047302AAFBDBE00FE0F2B /* EmptyRouter.swift in Sources */,
 				E12047322AAFBDD200FE0F2B /* MainTabBarCoordinator.swift in Sources */,
 				E1BA5AA82ABCC9F800C444DD /* HomeViewModel.swift in Sources */,
+				E1E62D6C2ADEC170000DD33E /* ListPageView.swift in Sources */,
 				E15A1FAD2ACC51980045F9DC /* JustifyViewModel.swift in Sources */,
 				E1B89E802ADB01EB0099BC3B /* PhotoPicker.swift in Sources */,
 				E19D69462AC74DD600C9D797 /* JustifyScreenView.swift in Sources */,
@@ -483,6 +498,7 @@
 				FA11AA642ADB6B8300934D57 /* BackButton.swift in Sources */,
 				E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */,
 				E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */,
+				E1E62D6A2ADEBCB4000DD33E /* SelectedPlantsStorage.swift in Sources */,
 				E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */,
 				E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */,
 				E1BA5AA62ABCC9BB00C444DD /* HomeScreenView.swift in Sources */,
@@ -499,7 +515,7 @@
 				E1BA5AAF2ABCCDA300C444DD /* PlantCardView.swift in Sources */,
 				FA11AA5A2AD4B0BD00934D57 /* SettingsHeaderView.swift in Sources */,
 				E12047382AAFBE0C00FE0F2B /* HomeCoordinator.swift in Sources */,
-				4BB059682AC5C99B0032A1D2 /* PlantsStorage.swift in Sources */,
+				4BB059682AC5C99B0032A1D2 /* PopularPlantsStorage.swift in Sources */,
 				FA11AA542AD4AE2200934D57 /* ConnectionButton.swift in Sources */,
 				E19D693C2AC5E6F000C9D797 /* PhotoModel.swift in Sources */,
 				0725BF232ADC2C6B00C65CC7 /* UserPreferences.swift in Sources */,
@@ -665,7 +681,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4ZN626CZK5;
+				DEVELOPMENT_TEAM = 4DUTCP7Z6J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Сделать фото растения";
@@ -681,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = FollowNature.r;
+				PRODUCT_BUNDLE_IDENTIFIER = aw.FollowNature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -699,7 +715,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4ZN626CZK5;
+				DEVELOPMENT_TEAM = 4DUTCP7Z6J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FollowNature/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Сделать фото растения";
@@ -715,7 +731,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = FollowNature.r;
+				PRODUCT_BUNDLE_IDENTIFIER = aw.FollowNature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
