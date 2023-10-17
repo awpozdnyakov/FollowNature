@@ -18,7 +18,27 @@
 "yourLevel" = "Твой уровень";
 "makeAPhoto" = "Сделай фото чтобы повысить его!";
 
+// MARK: - Levels
+"zeroSearch" = "0 поисков";
+"tenSearch" = "10 поисков";
+"thirtySearch" = "30 поисков";
+"fiftySearch" = "50 поисков";
+
+// MARK: - Details
+"showMore" = "Показать больше";
+"showTranslate" = "Показать перевод";
+"deleteFromFavorite" = "Убрать из списка “Выбраное”";
+"taxonomy" = "Род";
+"order" = "Порядок";
+"family" = "Семейство";
+"phylum" = "Тип";
+"kingdom" = "Царство";
+
 // MARK: - Notepad
+"selected" = "Выбранное";
+"allSelected" = "Все";
+"enterPlantName" = "Введите название растения";
+"clickOntheBugOrCreateYourSelectedList" = "Нажими на жучка\nСоздай свой список <Выбранное>";
 
 // MARK: - Profile
 "requests" = "Запросов выполнено";

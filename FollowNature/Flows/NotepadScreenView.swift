@@ -26,22 +26,21 @@ struct NotepadScreenView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            TextField("L10n.enterPlantName", text: $searchText)
+            TextField(L10n.enterPlantName, text: $searchText)
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 10).strokeBorder())
                 .padding(.horizontal, 15)
-                .padding(.top, 50)
                 .padding(.bottom, 20)
             Picker("title", selection: $page) {
-                Text("L10n.selected")
+                Text(L10n.selected)
                     .tag(ConsultationPage.pending)
-                Text("L10n.allSelected")
+                Text(L10n.allSelected)
                     .tag(ConsultationPage.finished)
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal, 15)
             if page == .pending {
-                Text("L10n.clickOntheBugOrCreateYourSelectedList")
+                Text(L10n.clickOntheBugOrCreateYourSelectedList)
                     .multilineTextAlignment(.center)
                     .font(.headline)
                     .padding(.top, 50)
