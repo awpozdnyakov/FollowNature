@@ -26,7 +26,7 @@ struct SettingsTableView: View {
                         .font(.system(size: 30, weight: .medium))
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                     Text(L10n.requests)
-                        .font(.system(size: 20, weight: .medium))
+                        .font(.system(size: 18, weight: .medium))
                 }
                 .padding(.leading, 25)
                 .padding(.top, 20)

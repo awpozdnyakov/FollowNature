@@ -19,7 +19,7 @@ struct SelectedButton: View {
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                     Text(L10n.mySelected)
                         .foregroundColor(.black)
-                        .font(.system(size: 20, weight: .medium))
+                        .font(.system(size: 18, weight: .medium))
                     Spacer()
                 }
                 .padding(.vertical, 10)

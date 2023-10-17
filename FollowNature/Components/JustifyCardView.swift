@@ -42,11 +42,10 @@ struct JustifyCardView: View {
                     buildJustifySection()
                 }
                 Text(description)
-                    .font(.system(size: 15, weight: .medium))
+                    .font(.system(size: 13, weight: .regular))
                     .foregroundColor(Asset.Colors.textSecondary.swiftUIColor)
                 Spacer()
                 HStack {
-                    Spacer()
                     Button {
                         self.details()
                     } label: {
@@ -56,10 +55,11 @@ struct JustifyCardView: View {
                                 .font(.system(size: 15, weight: .semibold))
                                 .foregroundColor(Asset.Colors.textPrimary.swiftUIColor)
                             Spacer()
-                        }.frame(height: 30)
-                            .background(
-                                RoundedRectangle(cornerRadius: 7)
-                                    .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2))
+                        }
+                        .frame(height: 30)
+                        .background(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(Asset.Colors.greenLight.swiftUIColor, lineWidth: 2))
                     }
                 }
             }
@@ -74,11 +74,21 @@ struct JustifyCardView: View {
             }
             .frame(width: 170, height: 170, alignment: .center)
             .cornerRadius(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.black, lineWidth: 0.7))
         }
         .padding(.all, 15)
         .background(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2)
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color(.white))
+                .shadow(color: Asset.Colors.green.swiftUIColor.opacity(1.5), radius: 3)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .inset(by: 0.25)
+                        .stroke(Asset.Colors.green.swiftUIColor
+                            .opacity(0.15), lineWidth: 0.5)
+                )
         )
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
@@ -90,7 +100,7 @@ struct JustifyCardView: View {
         VStack{
             ZStack {
                 Circle()
-                    .stroke(Color.white, style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                    .stroke(Asset.Colors.greenLight.swiftUIColor, style: StrokeStyle(lineWidth: 3, lineCap: .round))
                     .frame(width: 50, height: 50)
                 Circle()
                     .trim(from: 0.0, to: progress)

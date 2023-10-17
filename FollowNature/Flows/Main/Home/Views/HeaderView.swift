@@ -26,13 +26,11 @@ struct HeaderView: View {
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                     Spacer()
-                    
                 }
                 Text(L10n.makeAPhoto)
                     .font(.system(size: 20))
             }
             .padding(.horizontal, 15)
-
             HStack(alignment: .top) {
                 Spacer()
                 Button(action: {
@@ -49,7 +47,6 @@ struct HeaderView: View {
                 }
             }
         }
-        .padding(.bottom, 70)
         .padding(.trailing, 20)
         .fullScreenCover(isPresented: $isModalPresented) {
             LevelsInfoModalView(isModalPresented: $isModalPresented)

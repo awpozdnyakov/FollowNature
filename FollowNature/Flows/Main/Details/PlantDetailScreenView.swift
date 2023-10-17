@@ -18,6 +18,8 @@ struct PlantDetailScreenView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
+            BackButton()
+                .padding(.bottom, 5)
             if let imageURL = viewModel.plant.details.image.value {
                 GeometryReader { geometry in
                     Rectangle()
@@ -34,19 +36,19 @@ struct PlantDetailScreenView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
                                 .inset(by: 1.5)
-                                .stroke(Color(red: 0.12, green: 0.71, blue: 0.59), lineWidth: 3))
+                                .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 3))
                 }.frame(height: 430)
             }
             
             HStack {
                 Text(viewModel.plant.name)
-                    .font(.system(size: 36, weight: .bold))
+                    .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black)
                 Spacer()
                 Button {
                     viewModel.select()
                 } label: {
-                    Image(asset: Asset.Images.ladybug)
+                    Image(systemName: "ladybug")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 53, height: 37)
@@ -55,9 +57,8 @@ struct PlantDetailScreenView: View {
                 }
                 .padding(.horizontal, 15)
             }
-            
             Text(viewModel.translatedDescription ?? (viewModel.isFullDescriptionVisible ? viewModel.plant.details.description.value : String(viewModel.plant.details.description.value.prefix(500))))
-                .font(.system(size: 18))
+                .font(.system(size: 18, weight: .regular))
                 .foregroundColor(.black)
             
             if viewModel.plant.details.description.value.count > 500 {
@@ -77,8 +78,6 @@ struct PlantDetailScreenView: View {
                             .padding(.top, 0.5)
                         }
                     }
-                    
-                    
                 } else {
                     Button(action: {
                         viewModel.toggleDescriptionVisibility()
@@ -93,10 +92,9 @@ struct PlantDetailScreenView: View {
                     }
                 }
             }
-            
             Divider()
-                .background(Asset.Colors.green.swiftUIColor)
-            
+                .frame(height: 1)
+                .overlay(Asset.Colors.green.swiftUIColor)
             VStack(alignment: .leading, spacing: 7) {
                 TaxonomyRow(title: L10n.taxonomy, value: viewModel.plant.details.taxonomy?.genus ?? "")
                 TaxonomyRow(title: L10n.order, value: viewModel.plant.details.taxonomy?.order ?? "")
@@ -104,26 +102,26 @@ struct PlantDetailScreenView: View {
                 TaxonomyRow(title: L10n.phylum, value: viewModel.plant.details.taxonomy?.phylum ?? "")
                 TaxonomyRow(title: L10n.kingdom, value: viewModel.plant.details.taxonomy?.kingdom ?? "")
             }
-            
+            .padding(.vertical, 10)
             GeometryReader { geometry in
                 Button(action: {
                     viewModel.unSelect()
                 }) {
                     Text(L10n.deleteFromFavorite)
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.black)
-                        .frame(width: geometry.size.width - 5, height: 60)
+                        .frame(width: geometry.size.width - 5, height: 50)
                         .background(Color.white)
-                        .cornerRadius(30)
+                        .cornerRadius(40)
                         .overlay(
                             RoundedRectangle(cornerRadius: 30)
                                 .inset(by: 1.5)
-                                .stroke(Color(red: 1, green: 0.01, blue: 0.01), lineWidth: 3))
+                                .stroke(Color(red: 1, green: 0.01, blue: 0.01), lineWidth: 1))
                 }
             }
             .padding(.bottom, 50)
-            .padding(.top, 34)
-        }.padding(.horizontal, 15)
+        }
+        .padding(.horizontal, 15)
     }
 }
 

@@ -14,10 +14,10 @@ struct TaxonomyRow: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(Font.custom("Inter", size: 24).weight(.bold))
-                .foregroundColor(Color(red: 0.12, green: 0.71, blue: 0.59))
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(Asset.Colors.green.swiftUIColor)
             Text(value)
-                .font(Font.custom("Inter", size: 22).weight(.medium))
+                .font(.system(size: 20, weight: .medium))
                 .foregroundColor(.black)
             Spacer()
         }

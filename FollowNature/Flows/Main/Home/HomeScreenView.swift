@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @ObservedObject private var viewModel: HomeViewModel
-        
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
@@ -18,33 +18,38 @@ struct HomeScreenView: View {
     var body: some View {
         VStack(spacing: 0) {
             HeaderView(level: viewModel.userLevel)
-                .padding(.bottom, 10)
             Button {
                 viewModel.showImagePicker = true
             } label: {
                 Image(asset: Asset.Images.follow)
             }
-            .padding(.vertical, 10)
+            .padding(.vertical, -15)
             .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
                 PhotoPicker(photo: $viewModel.selectedMedia)
             })
             Button {
             } label: {
-                Text("|")
-                    .font(.system(size: 25))
-                    .foregroundColor(.black)
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .padding(.trailing, 250 )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.black, lineWidth: 1)
-                    )
+                HStack(spacing: 16) {
+                    Text("|")
+                        .font(.system(size: 25))
+                        .foregroundColor(.black)
+                        .frame(height: 55)
+                        .padding(.leading)
+                    Text("Введите название растения")
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(Asset.Colors.gray.swiftUIColor)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.black, lineWidth: 1)
+                )
             }
+            .padding(.top, 20)
             .padding(.all, 15)
             ScrollView {
                 TabView {
-                    LazyVStack(spacing: 15) {
+                    LazyVStack(spacing: 18) {
                         ForEach(viewModel.plants) { cardData in
                             PlantCardView(
                                 plant: cardData,
@@ -61,10 +66,12 @@ struct HomeScreenView: View {
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .frame(height: CGFloat(viewModel.plants.count * 225 + 30))
             }
+            Spacer()
         }
-        .padding(.vertical, 40)
-        .padding(.top, 20)
-        .ignoresSafeArea()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.vertical, 30)
+        .padding(.bottom, 18)
+        .ignoresSafeArea(.all)
     }
 }
 

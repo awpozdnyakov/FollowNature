@@ -10,20 +10,20 @@ import SwiftUI
 struct PlantCardView: View {
     
     private let plant: FormdataSuggestion
-//    @Binding var plants: [FormdataSuggestion]
+    //    @Binding var plants: [FormdataSuggestion]
     @Binding var selected: Bool
     private let select: () -> Void
     private let details: () -> Void
-
+    
     init(
         plant: FormdataSuggestion,
-//        plants: Binding<[FormdataSuggestion]>,
+        //        plants: Binding<[FormdataSuggestion]>,
         selected: Binding<Bool>,
         select: @escaping () -> Void,
         details: @escaping () -> Void
     ) {
         self.plant = plant
-//        self._plants = plants
+        //        self._plants = plants
         self._selected = selected
         self.select = select
         self.details = details
@@ -31,7 +31,7 @@ struct PlantCardView: View {
     
     var body: some View {
         HStack(spacing: 15) {
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 5) {
                 HStack {
                     Text(plant.name)
                         .font(.system(size: 22, weight: .bold))
@@ -47,7 +47,7 @@ struct PlantCardView: View {
                     .foregroundColor(selected ? Asset.Colors.green.swiftUIColor : Asset.Colors.greenLight.swiftUIColor)
                 }
                 Text(plant.details.description.value)
-                    .font(.system(size: 15, weight: .medium))
+                    .font(.system(size: 13, weight: .regular))
                     .foregroundColor(Asset.Colors.textSecondary.swiftUIColor)
                 Spacer()
                 Button {
@@ -77,11 +77,21 @@ struct PlantCardView: View {
             }
             .frame(width: 170, height: 170, alignment: .center)
             .cornerRadius(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.black, lineWidth: 0.7))
         }
         .padding(.all, 15)
         .background(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Asset.Colors.green.swiftUIColor, lineWidth: 2)
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color(.white))
+                .shadow(color: Asset.Colors.green.swiftUIColor.opacity(1.5), radius: 3)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .inset(by: 0.25)
+                        .stroke(Asset.Colors.green.swiftUIColor
+                            .opacity(0.15), lineWidth: 0.5)
+                )
         )
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
