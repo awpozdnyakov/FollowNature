@@ -30,7 +30,7 @@ struct PlantCardView: View {
             VStack(alignment: .leading, spacing: 5) {
                 HStack {
                     Text(plant.name)
-                        .font(.system(size: 22, weight: .bold))
+                        .font(.system(size: 20, weight: .bold))
                     Spacer()
                     Button {
                         select()
@@ -41,6 +41,7 @@ struct PlantCardView: View {
                     }
                     .frame(width: 33, height: 37)
                     .foregroundColor(selected ? Asset.Colors.green.swiftUIColor : Asset.Colors.greenLight.swiftUIColor)
+                    .disabled(true)
                 }
                 Text(plant.details.description.value)
                     .font(.system(size: 13, weight: .regular))

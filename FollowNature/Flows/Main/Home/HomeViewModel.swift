@@ -23,7 +23,8 @@ final class HomeViewModel: ObservableObject {
     @Published var showMediaPicker: Bool = false
     @Published var showImagePicker: Bool = false
     @Published var selected: Bool = false
-    @Published var userLevel: UserLevel = .specialist
+    @Published var userLevel: UserLevel = .dilettante
+    @Published var isModalPresented: Bool = false
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
@@ -110,5 +111,9 @@ final class HomeViewModel: ObservableObject {
     
     func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
         router.trigger(.details(plant, selected))
+    }
+    
+    func loadPopularPlants() {
+        self.popularPlants = storage.load()
     }
 }

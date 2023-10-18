@@ -55,7 +55,7 @@ struct PlantDetailScreenView: View {
                 }
                 .padding(.horizontal, 15)
             }
-            Text(viewModel.translatedDescription ?? (viewModel.isFullDescriptionVisible ? viewModel.plant.details.description.value : String(viewModel.plant.details.description.value.prefix(500))))
+            Text(viewModel.translatedDescription ?? (viewModel.isFullDescriptionVisible ? viewModel.plant.details.description.value : String(viewModel.plant.details.description.value.prefix(700))))
                 .font(.system(size: 18, weight: .regular))
                 .foregroundColor(.black)
             if !viewModel.isTranslateButtonTapped {

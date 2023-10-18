@@ -15,62 +15,67 @@ struct HomeScreenView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            HeaderView(level: viewModel.userLevel)
-            Button {
-                viewModel.showImagePicker = true
-            } label: {
-                Image(asset: Asset.Images.follow)
-            }
-            .padding(.vertical, -15)
-            .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
-                PhotoPicker(photo: $viewModel.selectedMedia)
-            })
-            Button {
-            } label: {
-                HStack(spacing: 16) {
-                    Text("|")
-                        .font(.system(size: 25))
-                        .foregroundColor(.black)
-                        .frame(height: 55)
-                        .padding(.leading)
-                    Text("Введите название растения")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(Asset.Colors.gray.swiftUIColor)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+        ZStack {
+            VStack(spacing: 0) {
+                HeaderView(level: viewModel.userLevel, isModalPresented: $viewModel.isModalPresented)
+                Button {
+                    viewModel.showImagePicker = true
+                } label: {
+                    Image(asset: Asset.Images.follow)
                 }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.black, lineWidth: 1)
-                )
-            }
-            .padding(.top, 20)
-            .padding(.all, 15)
-            ScrollView {
-                TabView {
-                    LazyVStack(spacing: 15) {
-                        ForEach(viewModel.popularPlants) { cardData in
-                            PlantCardView(
-                                plant: cardData,
-                                selected: .constant(true),
-                                select: {},
-                                details: {
-                                    viewModel.showDetailScreen(
-                                        plant: cardData,
-                                        selected: viewModel.popularPlants.contains(where: { $0.id == cardData.id })
-                                    )}
-                            )}
+                .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
+                    PhotoPicker(photo: $viewModel.selectedMedia)
+                })
+                Button(action: {
+                    viewModel.showImagePicker = true
+                }) {
+                    Text("или выбери фото из галереи")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(Asset.Colors.green.swiftUIColor)
+                        .padding()
+                        .cornerRadius(40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .inset(by: 1.5)
+                                .stroke(Asset.Colors.green.swiftUIColor)
+                        )
+                }
+                .padding(.all, 20)
+                ScrollView {
+                    TabView {
+                        LazyVStack(spacing: 18) {
+                            ForEach(viewModel.popularPlants) { cardData in
+                                PlantCardView(
+                                    plant: cardData,
+                                    selected: .constant(true),
+                                    select: {},
+                                    details: {
+                                        viewModel.showDetailScreen(
+                                            plant: cardData,
+                                            selected: viewModel.popularPlants.contains(where: { $0.id == cardData.id })
+                                        )}
+                                )}
+                        }
                     }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .frame(height: CGFloat(viewModel.popularPlants.count * 223))
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: CGFloat(viewModel.popularPlants.count * 220))
+                Spacer()
             }
-            Spacer()
+            if viewModel.isModalPresented {
+                LevelsInfoModalView()
+                    .onTapGesture {
+                        viewModel.isModalPresented = false
+                    }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, 30)
         .padding(.bottom, 18)
         .ignoresSafeArea(.all)
+        .onAppear {
+            viewModel.loadPopularPlants()
+        }
     }
 }
 

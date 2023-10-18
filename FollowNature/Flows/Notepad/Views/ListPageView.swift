@@ -27,7 +27,7 @@ struct ListPageView: View {
     
     var body: some View {
         if !(plants.isEmpty) {
-                LazyVStack(spacing: 15) {
+                LazyVStack(spacing: 18) {
                     ForEach(plants) { cardData in
                         PlantCardView(plant: cardData,
                                       selected: $selected,

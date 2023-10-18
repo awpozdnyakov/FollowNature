@@ -20,6 +20,7 @@ final class NotepadViewModel: ObservableObject {
     @Published var currentPlant: PlantInfo?
     
     @Published var page: PadPage = .selected
+    @Published var searchText: String = ""
     
     private let storage = PopularPlantsStorage()
     private let router: UnownedRouter<NotepadRoute>
@@ -46,6 +47,7 @@ final class NotepadViewModel: ObservableObject {
                         commonName: plant.commonName,
                         imageURL: plant.imageURL
                     )
+                    print(plant)
                     self.currentPlant = plantInfo
                 } else {
                     print("Растение не найдено.")
