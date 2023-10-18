@@ -15,7 +15,7 @@ struct SelectedButton: View {
                 HStack(spacing: 23) {
                     Image(systemName: "ladybug")
                         .resizable()
-                        .frame(width: 40, height: 42)
+                        .frame(width: 40, height: 37)
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                     Text(L10n.mySelected)
                         .foregroundColor(.black)

@@ -18,6 +18,7 @@ final class NotepadViewModel: ObservableObject {
         }
     }
     @Published var page: PadPage = .selected
+    @Published var searchText: String = ""
     
     private let storage = PopularPlantsStorage()
     private let router: UnownedRouter<NotepadRoute>

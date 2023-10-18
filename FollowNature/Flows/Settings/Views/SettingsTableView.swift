@@ -48,7 +48,7 @@ struct SettingsTableView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 380)
+        .frame(height: 360)
         .padding(.horizontal, 15)
     }
 }

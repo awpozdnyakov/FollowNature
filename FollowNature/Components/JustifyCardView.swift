@@ -36,7 +36,7 @@ struct JustifyCardView: View {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     Text(name)
-                        .font(.system(size: 22, weight: .bold))
+                        .font(.system(size: 20, weight: .bold))
                     Spacer()
                     buildJustifySection()
                 }

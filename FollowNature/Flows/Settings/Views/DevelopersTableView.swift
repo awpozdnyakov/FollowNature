@@ -10,12 +10,12 @@ import SwiftUI
 struct DevelopersTableView: View {
     
     var body: some View {
-        VisualEffectView(effect: UIBlurEffect(style: .light))
+        VisualEffectView(effect: UIBlurEffect(style: .extraLight))
             .edgesIgnoringSafeArea(.all)
         ZStack {
             Rectangle()
                 .foregroundColor(.white)
-                .overlay(RoundedRectangle(cornerRadius: 25).stroke(Asset.Colors.greenLight.swiftUIColor, lineWidth: 2))
+                .overlay(RoundedRectangle(cornerRadius: 25).stroke(Asset.Colors.greenLight.swiftUIColor, lineWidth: 4))
             VStack {
                 Link(destination: URL(string: L10n.urlAndrew)!) {
                     HStack {
@@ -25,7 +25,7 @@ struct DevelopersTableView: View {
                         Spacer()
                     }
                     .padding(.leading, 20)
-                    .frame(height: 50, alignment: .leading)
+                    .frame(height: 47, alignment: .leading)
                 }
                 Divider()
                     .frame(height: 1)
@@ -38,7 +38,7 @@ struct DevelopersTableView: View {
                         Spacer()
                     }
                     .padding(.leading, 20)
-                    .frame(height: 50, alignment: .leading)
+                    .frame(height: 47, alignment: .leading)
                 }
                 Divider()
                     .frame(height: 1)
@@ -51,7 +51,7 @@ struct DevelopersTableView: View {
                         Spacer()
                     }
                     .padding(.leading, 20)
-                    .frame(height: 50, alignment: .leading)
+                    .frame(height: 47, alignment: .leading)
                 }
                 Divider()
                     .frame(height: 1)
@@ -64,15 +64,14 @@ struct DevelopersTableView: View {
                         Spacer()
                     }
                     .padding(.leading, 20)
-                    .frame(height: 50, alignment: .leading)
+                    .frame(height: 47, alignment: .leading)
                 }
             }
         }
-        .padding(.horizontal, 15)
         .frame(maxWidth: .infinity)
-        .frame(height: 280)
         .cornerRadius(25)
-        .padding(.bottom, 147)
+        .frame(height: 280)
+        .padding(.horizontal, 15)
     }
 }
 
