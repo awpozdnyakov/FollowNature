@@ -14,6 +14,8 @@
 		4BB059682AC5C99B0032A1D2 /* PopularPlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB059672AC5C99B0032A1D2 /* PopularPlantsStorage.swift */; };
 		4BF3F9402ADDEB950050FBF5 /* NotepadScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */; };
 		4BF3F9422ADDEBC80050FBF5 /* NotepadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */; };
+		4BF3F9442ADFDFDB0050FBF5 /* TrefleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F9432ADFDFDB0050FBF5 /* TrefleAPIManager.swift */; };
+		4BF3F9462ADFE8790050FBF5 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3F9452ADFE8790050FBF5 /* PlantModel.swift */; };
 		E12046F12AAF985A00FE0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F02AAF985A00FE0F2B /* AppDelegate.swift */; };
 		E12046F32AAF985A00FE0F2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */; };
 		E12046F52AAF985A00FE0F2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12046F42AAF985A00FE0F2B /* ViewController.swift */; };
@@ -70,6 +72,8 @@
 		4BB059672AC5C99B0032A1D2 /* PopularPlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlantsStorage.swift; sourceTree = "<group>"; };
 		4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotepadScreenView.swift; path = FollowNature/Flows/NotepadScreenView.swift; sourceTree = SOURCE_ROOT; };
 		4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadViewModel.swift; sourceTree = "<group>"; };
+		4BF3F9432ADFDFDB0050FBF5 /* TrefleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrefleAPIManager.swift; sourceTree = "<group>"; };
+		4BF3F9452ADFE8790050FBF5 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		E12046ED2AAF985A00FE0F2B /* FollowNature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowNature.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12046F02AAF985A00FE0F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E12046F22AAF985A00FE0F2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 			children = (
 				E1BA5AA02ABCC90800C444DD /* RecognitionService.swift */,
 				E1BA5AA22ABCC96B00C444DD /* RecognitionRequestCollection.swift */,
+				4BF3F9432ADFDFDB0050FBF5 /* TrefleAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				E19D69412AC5E8BC00C9D797 /* Base64ResponseModel.swift */,
 				E19D693B2AC5E6F000C9D797 /* PhotoModel.swift */,
 				E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */,
+				4BF3F9452ADFE8790050FBF5 /* PlantModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -498,12 +504,14 @@
 				E19D69352AC4DC8000C9D797 /* JustifyCardView.swift in Sources */,
 				E1BA5AAF2ABCCDA300C444DD /* PlantCardView.swift in Sources */,
 				FA11AA5A2AD4B0BD00934D57 /* SettingsHeaderView.swift in Sources */,
+				4BF3F9442ADFDFDB0050FBF5 /* TrefleAPIManager.swift in Sources */,
 				E12047382AAFBE0C00FE0F2B /* HomeCoordinator.swift in Sources */,
 				4BB059682AC5C99B0032A1D2 /* PopularPlantsStorage.swift in Sources */,
 				FA11AA542AD4AE2200934D57 /* ConnectionButton.swift in Sources */,
 				E19D693C2AC5E6F000C9D797 /* PhotoModel.swift in Sources */,
 				0725BF232ADC2C6B00C65CC7 /* UserPreferences.swift in Sources */,
 				E1BA5AAC2ABCCD2100C444DD /* HeaderView.swift in Sources */,
+				4BF3F9462ADFE8790050FBF5 /* PlantModel.swift in Sources */,
 				0725BF1E2ADC0FD600C65CC7 /* LevelsInfoView.swift in Sources */,
 				E19D693E2AC5E7C800C9D797 /* FormdataResponseModel.swift in Sources */,
 				4BF3F9402ADDEB950050FBF5 /* NotepadScreenView.swift in Sources */,

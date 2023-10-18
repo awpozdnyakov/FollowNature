@@ -17,6 +17,8 @@ final class NotepadViewModel: ObservableObject {
             storage.save(plants: plants)
         }
     }
+    @Published var currentPlant: PlantInfo?
+    
     @Published var page: PadPage = .selected
     
     private let storage = PopularPlantsStorage()
@@ -27,6 +29,31 @@ final class NotepadViewModel: ObservableObject {
     ) {
         self.router = router
         self.plants = storage.load()
+    }
+    
+    func searchedPlanstBy(name: String) {
+        TrefleAPIManager.shared.searchPlantByName(name) { (result: Result<Welcome, Error>) in
+            switch result {
+            case .success(let searchResponse):
+                if let plant = searchResponse.data.first {
+                    let plantInfo = PlantInfo(
+                        id: plant.id,
+                        scientificName: plant.scientificName,
+                        family: plant.family,
+                        genus: plant.genus,
+                        genusID: plant.genusID,
+                        synonyms: plant.synonyms,
+                        commonName: plant.commonName,
+                        imageURL: plant.imageURL
+                    )
+                    self.currentPlant = plantInfo
+                } else {
+                    print("Растение не найдено.")
+                }
+            case .failure(let error):
+                print("Ошибка:", error)
+            }
+        }
     }
 }
 
