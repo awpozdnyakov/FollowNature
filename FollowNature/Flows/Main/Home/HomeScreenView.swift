@@ -23,30 +23,24 @@ struct HomeScreenView: View {
                 } label: {
                     Image(asset: Asset.Images.follow)
                 }
-                .padding(.vertical, -15)
                 .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
                     PhotoPicker(photo: $viewModel.selectedMedia)
                 })
-                Button {
-                } label: {
-                    HStack(spacing: 16) {
-                        Text("|")
-                            .font(.system(size: 25))
-                            .foregroundColor(.black)
-                            .frame(height: 55)
-                            .padding(.leading)
-                        Text("Введите название растения")
-                            .font(.system(size: 18, weight: .medium))
-                            .foregroundColor(Asset.Colors.gray.swiftUIColor)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.black, lineWidth: 1)
-                    )
+                Button(action: {
+                    viewModel.showImagePicker = true
+                }) {
+                    Text("или выбери фото из галереи")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(Asset.Colors.green.swiftUIColor)
+                        .padding()
+                        .cornerRadius(40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .inset(by: 1.5)
+                                .stroke(Asset.Colors.green.swiftUIColor)
+                        )
                 }
-                .padding(.top, 20)
-                .padding(.all, 15)
+                .padding(.all, 20)
                 ScrollView {
                     TabView {
                         LazyVStack(spacing: 18) {

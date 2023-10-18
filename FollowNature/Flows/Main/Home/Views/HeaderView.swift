@@ -46,7 +46,7 @@ struct HeaderView: View {
             }
             Text(L10n.makeAPhoto)
                 .font(.system(size: 20))
-                .padding(.bottom, 60)
+                .padding(.bottom, 20)
         }
         .padding(.horizontal, 15)
 //        .fullScreenCover(isPresented: $isModalPresented) {

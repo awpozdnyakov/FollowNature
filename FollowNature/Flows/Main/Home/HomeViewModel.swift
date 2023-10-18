@@ -23,7 +23,7 @@ final class HomeViewModel: ObservableObject {
     @Published var showMediaPicker: Bool = false
     @Published var showImagePicker: Bool = false
     @Published var selected: Bool = false
-    @Published var userLevel: UserLevel = .specialist
+    @Published var userLevel: UserLevel = .dilettante
     @Published var isModalPresented: Bool = false
     
     private let router: UnownedRouter<HomeRoute>
