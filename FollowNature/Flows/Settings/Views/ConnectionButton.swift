@@ -22,7 +22,7 @@ struct ConnectionButton: View {
                 }
             } label: {
                 HStack(spacing: 23) {
-                    Image(systemName: "ellipsis.message")
+                    Image(uiImage: Asset.Images.connect.image)
                         .resizable()
                         .frame(width: 40, height: 37)
                         .foregroundColor(Asset.Colors.green.swiftUIColor)

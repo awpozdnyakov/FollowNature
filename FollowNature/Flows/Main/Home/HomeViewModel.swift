@@ -24,6 +24,7 @@ final class HomeViewModel: ObservableObject {
     @Published var showImagePicker: Bool = false
     @Published var selected: Bool = false
     @Published var userLevel: UserLevel = .specialist
+    @Published var isModalPresented: Bool = false
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
