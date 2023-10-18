@@ -112,4 +112,8 @@ final class HomeViewModel: ObservableObject {
     func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
         router.trigger(.details(plant, selected))
     }
+    
+    func loadPopularPlants() {
+        self.popularPlants = storage.load()
+    }
 }

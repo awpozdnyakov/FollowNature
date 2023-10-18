@@ -73,6 +73,9 @@ struct HomeScreenView: View {
         .padding(.vertical, 30)
         .padding(.bottom, 18)
         .ignoresSafeArea(.all)
+        .onAppear {
+            viewModel.loadPopularPlants()
+        }
     }
 }
 

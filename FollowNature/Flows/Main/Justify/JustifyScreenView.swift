@@ -19,7 +19,7 @@ struct JustifyScreenView: View {
         ScrollView {
             HStack {
                 BackButton()
-                Spacer()                    
+                Spacer()
             }
             .padding(.horizontal, 15)
             TabView {
