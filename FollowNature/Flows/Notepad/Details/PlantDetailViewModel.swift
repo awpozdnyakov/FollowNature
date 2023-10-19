@@ -12,9 +12,9 @@ import XCoordinator
 import Alamofire
 
 class PlantDetailViewModel: ObservableObject {
-    @Published var selectedPlants: [FormdataSuggestion] = [] {
+    @Published var plants: [FormdataSuggestion] = [] {
         didSet {
-            storage.save(plants: selectedPlants)
+            storage.save(plants: plants)
         }
     }
     @Published var plant: FormdataSuggestion
@@ -24,18 +24,18 @@ class PlantDetailViewModel: ObservableObject {
     @Published var isTranslateButtonTapped: Bool = false
 
     private var cancellables = Set<AnyCancellable>()
-    private let router: UnownedRouter<HomeRoute>
+    private let router: UnownedRouter<NotepadRoute>
     private let storage = PopularPlantsStorage()
     
     init(
         plant: FormdataSuggestion,
         selected: Bool,
-        router: UnownedRouter<HomeRoute>
+        router: UnownedRouter<NotepadRoute>
     ) {
         self.plant = plant
         self.selected = selected
         self.router = router
-        self.selectedPlants = storage.load()
+        self.plants = storage.load()
     }
     
     func toggleDescriptionVisibility() {
@@ -43,18 +43,20 @@ class PlantDetailViewModel: ObservableObject {
     }
     
     func select() {
-        if !selectedPlants.contains(where: { $0.id == plant.id }) {
+        if !plants.contains(where: { $0.id == plant.id }) {
             self.selected = true
-            self.selectedPlants.append(plant)
-            self.storage.save(plants: selectedPlants)
+            self.plants.append(plant)
+            self.storage.save(plants: plants)
+            self.plants = storage.load()
         }
     }
 
     func unSelect() {
-        if let index = selectedPlants.firstIndex(where: { $0.id == plant.id }) {
+        if let index = plants.firstIndex(where: { $0.id == plant.id }) {
             self.selected = false
-            self.selectedPlants.remove(at: index)
-            self.storage.save(plants: selectedPlants)
+            self.plants.remove(at: index)
+            self.storage.save(plants: plants)
+            self.plants = storage.load()
         }
     }
     
@@ -89,5 +91,9 @@ class PlantDetailViewModel: ObservableObject {
                 print("Request error: \(error)")
             }
         }
+    }
+    
+    func loadPlants() {
+        self.plants = storage.load()
     }
 }

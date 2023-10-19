@@ -18,18 +18,23 @@ struct HomeScreenView: View {
         ZStack {
             VStack(spacing: 0) {
                 HeaderView(level: viewModel.userLevel, isModalPresented: $viewModel.isModalPresented)
+                Spacer()
                 Button {
                     viewModel.showImagePicker = true
                 } label: {
                     Image(asset: Asset.Images.follow)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300, height: 300)
                 }
                 .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
                     PhotoPicker(photo: $viewModel.selectedMedia)
                 })
+                Spacer()
                 Button(action: {
                     viewModel.showImagePicker = true
                 }) {
-                    Text("или выбери фото из галереи")
+                    Text(L10n.chooseAPhoto)
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                         .padding()
@@ -41,25 +46,6 @@ struct HomeScreenView: View {
                         )
                 }
                 .padding(.all, 20)
-                ScrollView {
-                    TabView {
-                        LazyVStack(spacing: 18) {
-                            ForEach(viewModel.popularPlants) { cardData in
-                                PlantCardView(
-                                    plant: cardData,
-                                    selected: .constant(true),
-                                    select: {},
-                                    details: {
-                                        viewModel.showDetailScreen(
-                                            plant: cardData,
-                                            selected: viewModel.popularPlants.contains(where: { $0.id == cardData.id })
-                                        )}
-                                )}
-                        }
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
-                    .frame(height: CGFloat(viewModel.popularPlants.count * 223))
-                }
                 Spacer()
             }
             if viewModel.isModalPresented {
@@ -81,7 +67,7 @@ struct HomeScreenView: View {
         .padding(.bottom, 18)
         .ignoresSafeArea(.all)
         .onAppear {
-            viewModel.loadPopularPlants()
+            viewModel.loadPlants()
         }
     }
 }

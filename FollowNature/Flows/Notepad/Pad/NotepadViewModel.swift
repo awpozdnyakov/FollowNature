@@ -18,7 +18,6 @@ final class NotepadViewModel: ObservableObject {
         }
     }
     @Published var currentPlant: PlantInfo?
-    
     @Published var page: PadPage = .selected
     @Published var searchText: String = ""
     
@@ -47,8 +46,9 @@ final class NotepadViewModel: ObservableObject {
                         commonName: plant.commonName,
                         imageURL: plant.imageURL
                     )
-                    print(plant)
-                    self.currentPlant = plantInfo
+                    DispatchQueue.main.async {
+                        self.currentPlant = plantInfo
+                    }
                 } else {
                     print("Растение не найдено.")
                 }
@@ -56,6 +56,14 @@ final class NotepadViewModel: ObservableObject {
                 print("Ошибка:", error)
             }
         }
+    }
+
+    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
+        router.trigger(.details(plant, selected))
+    }
+    
+    func loadPlants() {
+        self.plants = storage.load()
     }
 }
 

@@ -21,7 +21,7 @@ struct SettingsTableView: View {
                 .overlay(RoundedRectangle(cornerRadius: 30).stroke(Asset.Colors.greenLight.swiftUIColor, lineWidth: 2))
             VStack(alignment: .leading) {
                 HStack(spacing: 23) {
-                    Text("12")
+                    Text(String(UserPreferences.shared.numberOfSearches))
                         .font(.system(size: 30, weight: .medium))
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
                     Text(L10n.requests)
@@ -40,7 +40,14 @@ struct SettingsTableView: View {
                 Divider()
                     .frame(height: 1)
                     .overlay(Asset.Colors.greenLight.swiftUIColor)
-                Spacer()
+                HStack(spacing: 17) {
+                    Text("API")
+                        .font(.system(size: 30, weight: .medium))
+                        .foregroundColor(Asset.Colors.green.swiftUIColor)
+                    Text("Ввести новый ключ")
+                        .font(.system(size: 18, weight: .medium))
+                }
+                .padding(.leading, 20)
                 Divider()
                     .frame(height: 1)
                     .overlay(Asset.Colors.greenLight.swiftUIColor)

@@ -12,12 +12,18 @@ import XCoordinator
 import Moya
 
 final class HomeViewModel: ObservableObject {
-    @Published var popularPlants: [FormdataSuggestion] = [] {
+    @Published var plants: [FormdataSuggestion] = [] {
         didSet {
-            storage.save(plants: popularPlants)
+            storage.save(plants: plants)
             updateLevel()
         }
     }
+//    @Published var popularPlants: [FormdataSuggestion] = [] {
+//        didSet {
+//            storage.save(plants: popularPlants)
+//            updateLevel()
+//        }
+//    }
     @Published var justifyPlants: [FormdataSuggestion] = []
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false
@@ -38,7 +44,7 @@ final class HomeViewModel: ObservableObject {
     ) {
         self.router = router
         self.service = service
-        self.popularPlants = storage.load()
+        self.plants = storage.load()
         self.userLevel = UserPreferences.shared.userLevel
         updateLevel()
     }
@@ -88,8 +94,8 @@ final class HomeViewModel: ObservableObject {
                 if let suggestions = result.result?.classification.suggestions {
                     self.justifyPlants = suggestions
                     if let positive = self.justifyPlants.first {
-                        if !self.popularPlants.contains(where: { $0.id == positive.id }) {
-                            self.popularPlants.append(positive)
+                        if !self.plants.contains(where: { $0.id == positive.id }) {
+                            self.plants.append(positive)
                         }
                         self.showJustifyScreen(justifyPlants: self.justifyPlants)
                     }
@@ -113,11 +119,7 @@ final class HomeViewModel: ObservableObject {
         router.trigger(.jistify(justifyPlants))
     }
     
-    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
-        router.trigger(.details(plant, selected))
-    }
-    
-    func loadPopularPlants() {
-        self.popularPlants = storage.load()
+    func loadPlants() {
+        self.plants = storage.load()
     }
 }

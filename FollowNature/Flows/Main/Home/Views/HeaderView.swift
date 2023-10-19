@@ -35,13 +35,12 @@ struct HeaderView: View {
                         Text(level.rawValue)
                             .font(.system(size: 20, weight: .heavy))
                             .foregroundColor(Asset.Colors.green.swiftUIColor)
-                    }.padding(.top, 40)
+                    }.padding(.top, 20)
                     Spacer()
                     Image(uiImage: Asset.Images.level.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 80, height: 80)
-                        .padding(.trailing, 5)
                 }
             }
             Text(L10n.makeAPhoto)

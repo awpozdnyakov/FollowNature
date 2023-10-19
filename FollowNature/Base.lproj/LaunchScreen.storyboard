@@ -17,9 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follow" translatesAutoresizingMaskIntoConstraints="NO" id="W6k-DM-7vr">
-                                <rect key="frame" x="40" y="269.66666666666669" width="313" height="313.00000000000006"/>
+                                <rect key="frame" x="46.666666666666657" y="262" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="W6k-DM-7vr" secondAttribute="height" multiplier="1:1" id="Uqs-fI-9M2"/>
+                                    <constraint firstAttribute="height" constant="300" id="2Im-ME-lkp"/>
+                                    <constraint firstAttribute="width" constant="300" id="OoT-EN-bd7"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -27,10 +28,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="W6k-DM-7vr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="JwO-At-8ff"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W6k-DM-7vr" secondAttribute="trailing" constant="40" id="Xph-2F-oY4"/>
-                            <constraint firstItem="W6k-DM-7vr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eEE-pj-zFj"/>
-                            <constraint firstItem="W6k-DM-7vr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fL9-nq-cjU"/>
+                            <constraint firstItem="W6k-DM-7vr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UFo-1B-nMU"/>
+                            <constraint firstItem="W6k-DM-7vr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-14" id="t4o-nC-c6F"/>
                         </constraints>
                     </view>
                 </viewController>

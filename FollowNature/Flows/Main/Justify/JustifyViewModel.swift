@@ -33,8 +33,8 @@ class JustifyViewModel: ObservableObject {
         self.plants = storage.load()
     }
     
-    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
-        router.trigger(.details(plant, selected))
-    }
+//    func showDetailScreen(plant: FormdataSuggestion, selected: Bool) {
+//        router.trigger(.details(plant, selected))
+//    }
 }
 
