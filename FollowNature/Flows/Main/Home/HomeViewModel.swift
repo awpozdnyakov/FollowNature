@@ -18,12 +18,6 @@ final class HomeViewModel: ObservableObject {
             updateLevel()
         }
     }
-//    @Published var popularPlants: [FormdataSuggestion] = [] {
-//        didSet {
-//            storage.save(plants: popularPlants)
-//            updateLevel()
-//        }
-//    }
     @Published var justifyPlants: [FormdataSuggestion] = []
     @Published var selectedMedia: UIImage?
     @Published var showMediaPicker: Bool = false

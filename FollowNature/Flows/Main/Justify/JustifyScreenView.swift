@@ -31,9 +31,9 @@ struct JustifyScreenView: View {
                             description: cardData.details.description.value,
                             select: {},
                             details: {
-//                                viewModel.showDetailScreen(
-//                                    plant: cardData,
-//                                    selected: viewModel.plants.contains(where: { $0.id == cardData.id }))
+                                viewModel.showDetailScreen(
+                                    plant: cardData,
+                                    selected: viewModel.plants.contains(where: { $0.id == cardData.id }))
                             },
                             progress: cardData.probability)
                     }

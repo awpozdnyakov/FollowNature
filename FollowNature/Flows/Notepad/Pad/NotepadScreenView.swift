@@ -128,9 +128,13 @@ struct NotepadScreenView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear {
+            viewModel.loadPlants()
+        }
         .padding(.top, 50)
         .padding(.bottom, 50)
         .ignoresSafeArea(.all)
+        
     }
 }
 

@@ -1,17 +1,17 @@
 //
-//  PlantDetailScreenView.swift
+//  JustifyDetailsScreenView.swift
 //  FollowNature
 //
-//  Created by ti1ek on 01.10.2023.
+//  Created by Andrey Pozdnyakov on 19.10.2023.
 //
 
 import SwiftUI
 
-struct PlantDetailScreenView: View {
+struct JustifyDetailScreenView: View {
     
-    @ObservedObject var viewModel: PlantDetailViewModel
+    @ObservedObject var viewModel: JustifyDetailViewModel
     
-    init(viewModel: PlantDetailViewModel) {
+    init(viewModel: JustifyDetailViewModel) {
         self.viewModel = viewModel
     }
     
@@ -124,7 +124,7 @@ struct PlantDetailScreenView: View {
 }
 
 
-struct PlantDetailView_Previews: PreviewProvider {
+struct JustifyDetailView_Previews: PreviewProvider {
     static var previews: some View {
         
         let imageUrl = URL(string: "https://s3-alpha-sig.figma.com/img/3d5d/a628/abddd9a7cdfd6f7ef0ef9e54ceb42347?Expires=1697414400&Signature=qPskkguYEejdb0XWDmT8wI1RbxFoNl70~s3Ec6SSd-oxugzJkbb1rBHIEbrKtTG6SrwUuVK7~dU6RKB1W5jwKMD9za98PTe7XkP0gN-21e83s5EcRUk5Wf4~Pdj1H1uwTeFnE3kzolqxPbW5~oCaXrJ~5e9vqXqlS4~WpfSm2rZJnhzjD69-GPXNR6YkB-CKjfXb6gkDFQ6Rr4ec14Auu429F3x56-DdUjYru9q97hBWGze95r5dtaB5eeXiI~3uYVqvotTwTxone7zoCHUrgC8eG4rOmYTzYbJ4Rr4A0zttX~YTTok6c7uFiCpsnHDK6H36zLtt5zc-ISGRZydvBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4")
@@ -140,4 +140,5 @@ struct PlantDetailView_Previews: PreviewProvider {
     }
 }
 
-///Leucojum vernum, называемый весенней снежинкой, - вид цветковых растений семейства Амариллисовые. Он произрастает в Центральной и Южной Европе от Бельгии до Украины. Он считается натурализованным в северо-западной Европе, включая Великобританию и некоторые районы Скандинавии, а также в американских штатах Джорджия и Флорида. Этот весеннецветущий луковичный травянистый многолетник выращивается как декоративное растение на солнечном месте. Растение размножается в благоприятных условиях, образуя кустики. Каждое растение несет по одному белому цветку с зеленоватыми отметинами на кончике листочка околоцветника, на стебле высотой около 10-20 см (3,9–7,9 дюйма), иногда больше.Латинский специфический эпитет vernum означает относящийся к весне. Его близкий родственник, Leucojum aestivum, цветет летом.
+
+

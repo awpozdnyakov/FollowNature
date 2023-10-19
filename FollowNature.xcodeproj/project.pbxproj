@@ -51,6 +51,8 @@
 		E1BA5AAF2ABCCDA300C444DD /* PlantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */; };
 		E1E62D6A2ADEBCB4000DD33E /* SelectedPlantsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62D692ADEBCB4000DD33E /* SelectedPlantsStorage.swift */; };
 		E1E62D6C2ADEC170000DD33E /* ListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62D6B2ADEC170000DD33E /* ListPageView.swift */; };
+		E1E62D742AE18CCC000DD33E /* JustifyDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62D732AE18CCC000DD33E /* JustifyDetailsScreenView.swift */; };
+		E1E62D762AE18CE8000DD33E /* JustifyDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E62D752AE18CE8000DD33E /* JustifyDetailsViewModel.swift */; };
 		E1EE7DE02ABF934F0087A2D0 /* HealthAssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */; };
 		FA11AA4D2AD45E1400934D57 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA4C2AD45E1400934D57 /* SettingsScreenView.swift */; };
 		FA11AA4F2AD45E3800934D57 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA4E2AD45E3800934D57 /* SettingsViewModel.swift */; };
@@ -108,6 +110,8 @@
 		E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCardView.swift; sourceTree = "<group>"; };
 		E1E62D692ADEBCB4000DD33E /* SelectedPlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPlantsStorage.swift; sourceTree = "<group>"; };
 		E1E62D6B2ADEC170000DD33E /* ListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPageView.swift; sourceTree = "<group>"; };
+		E1E62D732AE18CCC000DD33E /* JustifyDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyDetailsScreenView.swift; sourceTree = "<group>"; };
+		E1E62D752AE18CE8000DD33E /* JustifyDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyDetailsViewModel.swift; sourceTree = "<group>"; };
 		E1EE7DDF2ABF934F0087A2D0 /* HealthAssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAssessmentModel.swift; sourceTree = "<group>"; };
 		FA11AA4C2AD45E1400934D57 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		FA11AA4E2AD45E3800934D57 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 			children = (
 				E19D69452AC74DD600C9D797 /* JustifyScreenView.swift */,
 				E15A1FAC2ACC51980045F9DC /* JustifyViewModel.swift */,
+				E1E62D722AE18CA4000DD33E /* Details */,
 			);
 			path = Justify;
 			sourceTree = "<group>";
@@ -359,6 +364,15 @@
 				4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */,
 			);
 			path = Pad;
+			sourceTree = "<group>";
+		};
+		E1E62D722AE18CA4000DD33E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				E1E62D732AE18CCC000DD33E /* JustifyDetailsScreenView.swift */,
+				E1E62D752AE18CE8000DD33E /* JustifyDetailsViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		E1EE7DD92ABE1B590087A2D0 /* Models */ = {
@@ -493,6 +507,7 @@
 				E19D69462AC74DD600C9D797 /* JustifyScreenView.swift in Sources */,
 				E15A1FB12ACC53280045F9DC /* TaxonomyRow.swift in Sources */,
 				FA11AA5E2AD7539D00934D57 /* LoaderView.swift in Sources */,
+				E1E62D742AE18CCC000DD33E /* JustifyDetailsScreenView.swift in Sources */,
 				FA11AA602AD77D6A00934D57 /* SettingsTableView.swift in Sources */,
 				FA11AA642ADB6B8300934D57 /* BackButton.swift in Sources */,
 				E1BA5AA12ABCC90800C444DD /* RecognitionService.swift in Sources */,
@@ -503,6 +518,7 @@
 				E1BA5AA62ABCC9BB00C444DD /* HomeScreenView.swift in Sources */,
 				FA11AA622AD77EAC00934D57 /* VisualEffectView.swift in Sources */,
 				FA11AA4F2AD45E3800934D57 /* SettingsViewModel.swift in Sources */,
+				E1E62D762AE18CE8000DD33E /* JustifyDetailsViewModel.swift in Sources */,
 				072ED8AF2AC95D84007CDE80 /* PlantDetailViewModel.swift in Sources */,
 				E1BA5AA32ABCC96B00C444DD /* RecognitionRequestCollection.swift in Sources */,
 				072ED8B12AC95D90007CDE80 /* PlantDetailScreenView.swift in Sources */,

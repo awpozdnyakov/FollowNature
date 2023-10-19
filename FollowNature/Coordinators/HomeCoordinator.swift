@@ -12,6 +12,7 @@ import SwiftUI
 enum HomeRoute: Route {
     case home
     case jistify([FormdataSuggestion])
+    case details(FormdataSuggestion, Bool)
 }
 
 class HomeCoordinator: NavigationCoordinator<HomeRoute> {
@@ -27,7 +28,10 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             return .push(buildHomeScreen())
         case .jistify(let plants):
             return .push(buildJustifyScreen(justifyPlants: plants))
+        case .details(let details, let selected):
+            return .push(buildDetailScreen(plant: details, selected: selected))
         }
+        
     }
     
     // MARK: - Build Screens
@@ -40,6 +44,12 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
     private func buildJustifyScreen(justifyPlants: [FormdataSuggestion]) -> UIViewController {
         let viewModel = JustifyViewModel(justifyPlants: justifyPlants, router: unownedRouter)
         let rootView = JustifyScreenView(viewModel: viewModel)
+        return UIHostingController(rootView: rootView)
+    }
+    
+    private func buildDetailScreen(plant: FormdataSuggestion, selected: Bool) -> UIViewController {
+        let viewModel = JustifyDetailViewModel(plant: plant, selected: selected, router: unownedRouter)
+        let rootView = JustifyDetailScreenView(viewModel: viewModel)
         return UIHostingController(rootView: rootView)
     }
 }

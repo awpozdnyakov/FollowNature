@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 class UserPreferences {
 
     static let shared = UserPreferences()
