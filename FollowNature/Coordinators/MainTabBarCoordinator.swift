@@ -15,42 +15,42 @@ enum TabBarRoute: Route {
 class MainTabBarCoordinator: TabBarCoordinator<TabBarRoute> {
     private let homeRouter: StrongRouter<HomeRoute>
     private let notepadRouter: StrongRouter<NotepadRoute>
-    private let profileRouter: StrongRouter<ProfileRoute>
+    private let settingsRouter: StrongRouter<SettingsRoute>
     
     convenience init() {
-        UITabBar.appearance().tintColor = .green
-        UITabBar.appearance().unselectedItemTintColor = .gray
         
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
+            appearance.stackedLayoutAppearance.normal.iconColor = UIColor(dynamicProvider: Asset.Colors.greenLight.color)
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
         
         let homeCoordinator = HomeCoordinator()
-        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: L10n.home, image: UIImage(systemName: "tree.circle"), tag: 0)
+        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Главная", image: UIImage(systemName: "camera.macro"), tag: 0)
         
         let notepadCoordinator = NotepadCoordinator()
-        notepadCoordinator.rootViewController.tabBarItem = UITabBarItem(title: L10n.notepad, image: UIImage(systemName: "tree.circle"), tag: 1)
+        notepadCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         
-        let profileCoordinator = ProfileCoordinator()
-        profileCoordinator.rootViewController.tabBarItem = UITabBarItem(title: L10n.profile, image: UIImage(systemName: "tree.circle"), tag: 2)
+        let settingsCoordinator = SettingsCoordinator()
+        settingsCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), tag: 2)
         
         self.init(
             homeRouter: homeCoordinator.strongRouter,
             notepadRouter: notepadCoordinator.strongRouter,
-            profileRouter: profileCoordinator.strongRouter
+            settingsRouter: settingsCoordinator.strongRouter
         )
     }
     
     init(
         homeRouter: StrongRouter<HomeRoute>,
         notepadRouter: StrongRouter<NotepadRoute>,
-        profileRouter: StrongRouter<ProfileRoute>
+        settingsRouter: StrongRouter<SettingsRoute>
     ) {
         self.homeRouter = homeRouter
         self.notepadRouter = notepadRouter
-        self.profileRouter = profileRouter
-        super.init(tabs: [homeRouter, notepadRouter, profileRouter],select: homeRouter)
+        self.settingsRouter = settingsRouter
+        super.init(tabs: [homeRouter, notepadRouter, settingsRouter],select: homeRouter)
+        rootViewController.view.backgroundColor = .white
     }
 }
