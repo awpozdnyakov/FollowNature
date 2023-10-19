@@ -28,12 +28,12 @@ struct HomeScreenView: View {
                         .frame(width: 300, height: 300)
                 }
                 .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
-                    PhotoPicker(photo: $viewModel.selectedMedia)
+                    PhotoPicker(photo: $viewModel.selectedMedia, sourceType: .library)
                 })
                 Spacer()
-                Button(action: {
+                Button {
                     viewModel.showImagePicker = true
-                }) {
+                } label: {
                     Text(L10n.chooseAPhoto)
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(Asset.Colors.green.swiftUIColor)
@@ -45,6 +45,9 @@ struct HomeScreenView: View {
                                 .stroke(Asset.Colors.green.swiftUIColor)
                         )
                 }
+                .sheet(isPresented: $viewModel.showImagePicker, onDismiss: loadPhoto, content: {
+                    PhotoPicker(photo: $viewModel.selectedMedia, sourceType: .cam)
+                })
                 .padding(.all, 20)
                 Spacer()
             }
@@ -56,19 +59,17 @@ struct HomeScreenView: View {
             }
             // Loader
             if viewModel.isLoading {
-                ProgressView() // Используйте этот SwiftUI компонент или ваш собственный лоадер
+                ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.black.opacity(0.4))
                     .ignoresSafeArea(.all)
+                    .padding(.bottom, 5)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, 30)
         .padding(.bottom, 18)
         .ignoresSafeArea(.all)
-        .onAppear {
-            viewModel.loadPlants()
-        }
     }
 }
 
