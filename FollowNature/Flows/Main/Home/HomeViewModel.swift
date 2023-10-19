@@ -31,6 +31,7 @@ final class HomeViewModel: ObservableObject {
     @Published var selected: Bool = false
     @Published var userLevel: UserLevel = .dilettante
     @Published var isModalPresented: Bool = false
+    @Published var isLoading: Bool = false
     
     private let router: UnownedRouter<HomeRoute>
     private let service: RecognitionService
@@ -61,6 +62,7 @@ final class HomeViewModel: ObservableObject {
     
     // MARK: - Loading
     func pushFormdataPhoto(photo: UIImage) {
+        isLoading = true
         cancellable = service.postFormdataPhoto(photo: photo)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -82,6 +84,7 @@ final class HomeViewModel: ObservableObject {
                             rank: nil
                         )
                     )
+                    self.isLoading = false
                     self.justifyPlants = [defaultSuggestion]
                     self.showJustifyScreen(justifyPlants: self.justifyPlants)
                 }
@@ -97,6 +100,7 @@ final class HomeViewModel: ObservableObject {
                         self.showJustifyScreen(justifyPlants: self.justifyPlants)
                     }
                 }
+                self.isLoading = false
             })
     }
     
