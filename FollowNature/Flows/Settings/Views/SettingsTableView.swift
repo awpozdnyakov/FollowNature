@@ -40,7 +40,14 @@ struct SettingsTableView: View {
                 Divider()
                     .frame(height: 1)
                     .overlay(Asset.Colors.greenLight.swiftUIColor)
-                Spacer()
+                HStack(spacing: 17) {
+                    Text("API")
+                        .font(.system(size: 30, weight: .medium))
+                        .foregroundColor(Asset.Colors.green.swiftUIColor)
+                    Text("Ввести новый ключ")
+                        .font(.system(size: 18, weight: .medium))
+                }
+                .padding(.leading, 20)
                 Divider()
                     .frame(height: 1)
                     .overlay(Asset.Colors.greenLight.swiftUIColor)

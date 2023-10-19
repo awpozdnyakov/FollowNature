@@ -71,6 +71,7 @@ struct NotepadScreenView: View {
                     .frame(height: CGFloat(viewModel.plants.count * 223))
                 }
             } else {
+                Spacer()
                 HStack(spacing: 15) {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
