@@ -70,7 +70,7 @@
 		072ED8AE2AC95D84007CDE80 /* PlantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailViewModel.swift; sourceTree = "<group>"; };
 		072ED8B02AC95D90007CDE80 /* PlantDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailScreenView.swift; sourceTree = "<group>"; };
 		4BB059672AC5C99B0032A1D2 /* PopularPlantsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlantsStorage.swift; sourceTree = "<group>"; };
-		4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotepadScreenView.swift; path = FollowNature/Flows/NotepadScreenView.swift; sourceTree = SOURCE_ROOT; };
+		4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotepadScreenView.swift; path = FollowNature/Flows/Notepad/Pad/NotepadScreenView.swift; sourceTree = SOURCE_ROOT; };
 		4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadViewModel.swift; sourceTree = "<group>"; };
 		4BF3F9432ADFDFDB0050FBF5 /* TrefleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrefleAPIManager.swift; sourceTree = "<group>"; };
 		4BF3F9452ADFE8790050FBF5 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 		4BF3F93E2ADDEB800050FBF5 /* Notepad */ = {
 			isa = PBXGroup;
 			children = (
-				4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */,
-				4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */,
+				E1E62D6F2AE13B73000DD33E /* Pad */,
+				072ED8AD2AC95C8B007CDE80 /* Details */,
 				E1E62D6D2ADEC177000DD33E /* Views */,
 			);
 			path = Notepad;
@@ -335,7 +335,6 @@
 		E1BA5AAD2ABCCD3D00C444DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				072ED8AD2AC95C8B007CDE80 /* Details */,
 				FA11AA5D2AD7539D00934D57 /* LoaderView.swift */,
 				E19D69342AC4DC8000C9D797 /* JustifyCardView.swift */,
 				E1BA5AAE2ABCCDA300C444DD /* PlantCardView.swift */,
@@ -351,6 +350,15 @@
 				E1E62D6B2ADEC170000DD33E /* ListPageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E1E62D6F2AE13B73000DD33E /* Pad */ = {
+			isa = PBXGroup;
+			children = (
+				4BF3F93F2ADDEB950050FBF5 /* NotepadScreenView.swift */,
+				4BF3F9412ADDEBC80050FBF5 /* NotepadViewModel.swift */,
+			);
+			path = Pad;
 			sourceTree = "<group>";
 		};
 		E1EE7DD92ABE1B590087A2D0 /* Models */ = {

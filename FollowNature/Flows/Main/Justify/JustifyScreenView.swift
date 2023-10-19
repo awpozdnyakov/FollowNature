@@ -30,10 +30,11 @@ struct JustifyScreenView: View {
                             image: cardData.details.image.value,
                             description: cardData.details.description.value,
                             select: {},
-                            details: {viewModel.showDetailScreen(
-                                plant: cardData,
-                                selected: viewModel.plants.contains(where: { $0.id == cardData.id })
-                            )},
+                            details: {
+//                                viewModel.showDetailScreen(
+//                                    plant: cardData,
+//                                    selected: viewModel.plants.contains(where: { $0.id == cardData.id }))
+                            },
                             progress: cardData.probability)
                     }
                 }

@@ -17,6 +17,7 @@
 // MARK: - Home
 "yourLevel" = "Твой уровень";
 "makeAPhoto" = "Сделай фото чтобы повысить его!";
+"chooseAPhoto" = "или выбери фото из галереи";
 
 // MARK: - Levels
 "zeroSearch" = "0 поисков";

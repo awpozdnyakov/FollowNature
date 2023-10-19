@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let allSelected = L10n.tr("Localizable", "allSelected", fallback: "Все")
   /// Андрей
   internal static let andrew = L10n.tr("Localizable", "andrew", fallback: "Андрей")
+  /// или выбери фото из галереи
+  internal static let chooseAPhoto = L10n.tr("Localizable", "chooseAPhoto", fallback: "или выбери фото из галереи")
   /// Нажими на жучка
   /// Создай свой список <Выбранное>
   internal static let clickOntheBugOrCreateYourSelectedList = L10n.tr("Localizable", "clickOntheBugOrCreateYourSelectedList", fallback: "Нажими на жучка\nСоздай свой список <Выбранное>")
