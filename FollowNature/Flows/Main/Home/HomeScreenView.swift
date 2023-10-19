@@ -68,6 +68,13 @@ struct HomeScreenView: View {
                         viewModel.isModalPresented = false
                     }
             }
+            // Loader
+            if viewModel.isLoading {
+                ProgressView() // Используйте этот SwiftUI компонент или ваш собственный лоадер
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.4))
+                    .ignoresSafeArea(.all)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, 30)
